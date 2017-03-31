@@ -1,0 +1,32 @@
+ru:
+  entities:
+  - query.jsp:
+    - topics: page
+      entries:
+      - Active From: Дата начала
+      - Active To: Дата окончания
+      - changeDate: Дата изменения
+      - Class: Класс
+      - Fio: Ф.И.О.
+      - Prev: Предыдущая
+      - amount: Сумма
+      - birthDay: Дата рожд.
+      - yes: да
+      - no: нет
+  - testtable:
+    - topics: operationName
+      entries:
+      - Delete: Удалить
+      - Edit: Редактировать
+      - Insert: Добавить
+    - topics: viewName
+      entries:
+      - All records: Все записи
+  - _welcome_:
+    - topics: displayName
+      entries:
+      - Welcome: Добро пожаловать
+  - _homepage_:
+    - topics: displayName
+      entries:
+      - homepage: Главная
