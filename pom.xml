@@ -3,9 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-
  <groupId>test</groupId>
- <artifactId>testapp</artifactId>
+ <artifactId>testBe5app</artifactId>
  <version>0.0.2</version>
 
  <modelVersion>4.0.0</modelVersion>
@@ -30,16 +29,42 @@
   </dependency>
 
   <dependency>
-   <groupId>javax.servlet</groupId>
-   <artifactId>javax.servlet-api</artifactId>
-   <version>3.0.1</version>
+   <groupId>postgresql</groupId>
+   <artifactId>postgresql</artifactId>
+   <version>9.1-901-1.jdbc4</version>
   </dependency>
 
  </dependencies>
 
  <build>
-
   <plugins>
+   <plugin>
+    <groupId>com.developmentontheedge.be5</groupId>
+    <artifactId>be5-maven-plugin</artifactId>
+    <version>0.1.0</version>
+    <configuration>
+     <projectPath>./</projectPath>
+    </configuration>
+   </plugin>
+
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-dependency-plugin</artifactId>
+    <version>3.0.0</version>
+    <configuration>
+     <outputDirectory>distrib</outputDirectory>
+     <overWriteReleases>false</overWriteReleases>
+     <overWriteSnapshots>false</overWriteSnapshots>
+     <overWriteIfNewer>true</overWriteIfNewer>
+     <!-- includeScope>runtime</includeScope> <useSubDirectoryPerScope>true</useSubDirectoryPerScope -->
+    </configuration>
+    <executions>
+     <!--execution> <id>copy-dependencies</id> <phase>package</phase> <goals>
+      <goal>copy-dependencies</goal> </goals> <configuration> <outputDirectory>distrib</outputDirectory>
+      <overWriteReleases>false</overWriteReleases> <overWriteSnapshots>false</overWriteSnapshots>
+      <overWriteIfNewer>true</overWriteIfNewer> </configuration> </execution -->
+    </executions>
+   </plugin>
 
    <plugin>
     <groupId>org.eclipse.jetty</groupId>
@@ -48,13 +73,6 @@
     <configuration>
      <scanIntervalSeconds>1</scanIntervalSeconds>
     </configuration>
-    <dependencies>
-     <dependency>
-      <groupId>org.eclipse.jetty.websocket</groupId>
-      <artifactId>javax-websocket-server-impl</artifactId>
-      <version>9.4.2.v20170220</version>
-     </dependency>
-    </dependencies>
    </plugin>
 
   </plugins>
