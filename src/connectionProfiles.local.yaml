@@ -1,10 +1,6 @@
 connectionProfiles:
   profiles:
-    testapp:
-      connectionUrl: jdbc:postgresql://localhost:5432/testapp
-      username: testapp
-      password: testapp
-    test:
-      connectionUrl: jdbc:h2:~/testBe5
-      username: sa
-      password:
+    test_local:
+      connectionUrl: jdbc:postgresql://localhost:5432/testbe5app
+      username: test
+      password: test
