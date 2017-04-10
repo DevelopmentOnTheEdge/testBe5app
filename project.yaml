@@ -2,5 +2,7 @@ condo_lk:
   features: logging
   l10n: ru
   projectFileStructure: {}
+  modules:
+  - core: {}
   application:
   - testtable

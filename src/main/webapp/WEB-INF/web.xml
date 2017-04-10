@@ -8,22 +8,13 @@
  <display-name>testBe5app</display-name>
 
  <servlet>
-  <servlet-name>api</servlet-name>
+  <servlet-name>be5</servlet-name>
   <servlet-class>com.developmentontheedge.be5.servlet.MainServlet</servlet-class>
-
-  <init-param>
-   <param-name>be5.projectSource</param-name>
-   <param-value>C:\java\dote\github\testBe5app\</param-value>
-  </init-param>
-  <init-param>
-   <param-name>be5.modulesSource</param-name>
-   <param-value>C:\java\dote\github\testBe5app\</param-value>
-  </init-param>
   <load-on-startup>1</load-on-startup>
  </servlet>
 
  <servlet-mapping>
-  <servlet-name>api</servlet-name>
+  <servlet-name>be5</servlet-name>
   <url-pattern>/api/*</url-pattern>
  </servlet-mapping>
 
