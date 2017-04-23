@@ -17,7 +17,7 @@ testtable:
   - Test 1D:
       type: 1D
       operations: [Insert, Edit, Delete]
-      roles: [Administratorm, Guest]
+      roles: [Administrator, Guest]
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -29,7 +29,7 @@ testtable:
               testtable t
   - Test 1D unknown:
       type: 1D_unknown
-      roles: [Administratorm, Guest]
+      roles: [Administrator, Guest]
       code: |2-
             SELECT
               t.ID AS "___ID",
