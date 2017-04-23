@@ -24,7 +24,7 @@
 
   <dependency>
    <groupId>com.developmentontheedge.be5.modules</groupId>
-   <artifactId>core</artifactId>
+   <artifactId>be5-modules-core</artifactId>
    <version>0.1.0</version>
   </dependency>
 
@@ -73,8 +73,13 @@
     <dependencies>
      <dependency>
       <groupId>com.developmentontheedge.be5.modules</groupId>
-      <artifactId>core</artifactId>
+      <artifactId>be5-modules-core</artifactId>
       <version>0.1.0</version>
+     </dependency>
+     <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.193</version>
      </dependency>
     </dependencies>
    </plugin>
