@@ -15,9 +15,12 @@ testtable:
         type: VARCHAR(30)
   queries:
   - Test 1D:
-      type: 1D
-      operations: [Insert, Edit, Delete]
+      type: D1
       roles: [Administrator, Guest]
+      operations:
+      - Delete
+      - Edit
+      - Insert
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -28,7 +31,7 @@ testtable:
             FROM
               testtable t
   - Test 1D unknown:
-      type: 1D_unknown
+      type: D1_UNKNOWN
       roles: [Administrator, Guest]
       code: |2-
             SELECT
@@ -42,20 +45,20 @@ testtable:
               AND t.ID = <parameter:ID/>
             </if>
   operations:
-  - Send password:
-      code: com.beanexplorer.enterprise.operations.SendPassword
+  - Add:
+      type: JavaScript/server
+      roles: Administrator
+      file: test.js
   - Delete:
       records: 2
-      roles: [Administrator]
+      roles: Administrator
       code: com.beanexplorer.enterprise.operations.SilentDeleteOperation
   - Edit:
       records: 2
-      roles: [Administrator]
+      roles: Administrator
       code: com.beanexplorer.enterprise.operations.SilentEditOperation
   - Insert:
-      roles: [Administrator]
+      roles: Administrator
       code: com.beanexplorer.enterprise.operations.SilentInsertOperation
-  - Add:
-      type: JavaScript/server
-      roles: [Administrator]
-      file: test.js
+  - Send password:
+      code: com.beanexplorer.enterprise.operations.SendPassword

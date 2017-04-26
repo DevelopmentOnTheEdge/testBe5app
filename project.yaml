@@ -3,9 +3,9 @@ condo_lk:
   l10n: ru
   projectFileStructure: {}
   modules:
-  - core: {}
-  application:
-  - testtable
+  - core:
+      entities: []
+  application: testtable
   scripts:
   - Post-db
   - dictionaries

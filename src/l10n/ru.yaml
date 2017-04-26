@@ -1,18 +1,26 @@
 ru:
   entities:
+  - _homepage_:
+    - topics: displayName
+      entries:
+      - homepage: Главная
+  - _welcome_:
+    - topics: displayName
+      entries:
+      - Welcome: Добро пожаловать
   - query.jsp:
     - topics: page
       entries:
       - Active From: Дата начала
       - Active To: Дата окончания
-      - changeDate: Дата изменения
       - Class: Класс
       - Fio: Ф.И.О.
       - Prev: Предыдущая
       - amount: Сумма
       - birthDay: Дата рожд.
-      - yes: да
-      - no: нет
+      - changeDate: Дата изменения
+      - 'no': нет
+      - 'yes': да
   - testtable:
     - topics: operationName
       entries:
@@ -22,11 +30,3 @@ ru:
     - topics: viewName
       entries:
       - All records: Все записи
-  - _welcome_:
-    - topics: displayName
-      entries:
-      - Welcome: Добро пожаловать
-  - _homepage_:
-    - topics: displayName
-      entries:
-      - homepage: Главная
