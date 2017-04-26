@@ -19,7 +19,7 @@ gulp
 - Create symlink /be5-react/dist -> src/main/webapp/be5
 
 #### Database
-- config connection profile in file: testapp/src/connectionProfiles.local.yaml 
+- config connection profile in file: [src/connectionProfiles.local.yaml](https://github.com/QProgS/testBe5app/blob/master/src/connectionProfiles.local.yaml) 
 - create file src/profile.local with name of connection, for example: "test_local"
 - create database
 ```sh
