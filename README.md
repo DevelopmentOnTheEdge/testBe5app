@@ -14,6 +14,7 @@ Download and run mvn install
 - Download https://github.com/DevelopmentOnTheEdge/be5-react
 ```sh
 npm install
+bower install
 gulp
 ```
 - Create symlink /be5-react/dist -> src/main/webapp/be5
