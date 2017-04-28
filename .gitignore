@@ -1,6 +1,7 @@
 src/profile.local
 src/main/webapp/be5
 src/lib/
+dev.yaml
 
 /.project
 /target
