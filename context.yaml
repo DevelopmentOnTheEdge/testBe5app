@@ -1,6 +1,7 @@
 context:
   components:
-  - login: com.developmentontheedge.be5.components.Login
+  - login: com.developmentontheedge.be5.modules.core.components.Login
+  - logout: com.developmentontheedge.be5.modules.core.components.Logout
 config:
   services:
     logger:
