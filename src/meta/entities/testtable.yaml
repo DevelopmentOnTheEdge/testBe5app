@@ -15,7 +15,7 @@ testtable:
         type: VARCHAR(30)
   queries:
   - Test 1D:
-      type: D1
+      type: 1D
       roles: [Administrator, Guest]
       operations:
       - Delete
@@ -31,7 +31,7 @@ testtable:
             FROM
               testtable t
   - Test 1D unknown:
-      type: D1_UNKNOWN
+      type: 1D_unknown
       roles: [Administrator, Guest]
       code: |2-
             SELECT
