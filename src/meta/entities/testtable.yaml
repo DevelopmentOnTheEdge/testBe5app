@@ -27,7 +27,7 @@ testtable:
               t.name AS "Name",
               '<quick visible="true"/>;<link using="___ID" columns="ID" table="testtable" queryName="Test 1D unknown"/>'
                 AS ";Name",
-              t.value AS "Value2"
+              t.value AS "Value"
             FROM
               testtable t
   - Test 1D unknown:
