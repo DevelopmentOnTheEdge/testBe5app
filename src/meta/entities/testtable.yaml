@@ -1,6 +1,6 @@
 testtable:
   type: table
-  displayName: testtable
+  displayName: Test table
   order: '10'
   primaryKey: ID
   scheme:
@@ -21,6 +21,7 @@ testtable:
       - Delete
       - Edit
       - Insert
+      - TestOperation
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -45,10 +46,9 @@ testtable:
               AND t.ID = <parameter:ID/>
             </if>
   operations:
-  - Add:
-      type: JavaScript/server
+  - TestOperation:
       roles: Administrator
-      file: test.js
+      code: com.developmentontheedge.testbe5app.TestOperation
   - Delete:
       records: 2
       roles: Administrator
@@ -60,5 +60,3 @@ testtable:
   - Insert:
       roles: Administrator
       code: com.developmentontheedge.be5.api.operationstest.SilentInsertOperation
-  - Send password:
-      code: com.beanexplorer.enterprise.operations.SendPassword
