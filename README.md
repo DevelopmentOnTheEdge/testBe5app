@@ -7,7 +7,7 @@ Test project based on https://github.com/DevelopmentOnTheEdge/be5
 #### Backend
 Download and run mvn install
 - https://github.com/DevelopmentOnTheEdge/xmltest
-- https://github.com/DevelopmentOnTheEdge/beanexplorer beans/
+- https://github.com/DevelopmentOnTheEdge/beanexplorer
 - https://github.com/DevelopmentOnTheEdge/be5
 
 #### Frontend

@@ -1,0 +1,16 @@
+language: java
+before_install:
+  - git clone https://github.com/DevelopmentOnTheEdge/beanexplorer.git
+    && cd beanexplorer
+    && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
+    && cd ../
+  - git clone https://github.com/DevelopmentOnTheEdge/be5.git
+    && cd be5
+    && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
+    && cd ../
+install:
+  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+jdk:
+  - oraclejdk8
+notifications:
+  email: false
