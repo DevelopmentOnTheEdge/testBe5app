@@ -1,4 +1,5 @@
 # Test Be5 application
+[![Build Status](https://travis-ci.org/DevelopmentOnTheEdge/testBe5app.svg?branch=master)](https://travis-ci.org/DevelopmentOnTheEdge/testBe5app)
 
 Test project based on https://github.com/DevelopmentOnTheEdge/be5
 
