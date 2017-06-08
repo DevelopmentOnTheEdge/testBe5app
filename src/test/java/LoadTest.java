@@ -16,9 +16,9 @@ public class LoadTest extends AbstractProjectIntegrationH2Test
     @Test
     public void testLoad() throws IOException, URISyntaxException, ProjectLoadException
     {
-        assertEquals("testBe5app", sp.getProject().getAppName());
+        assertEquals("testBe5app", injector.getProject().getAppName());
 
-        BeModelCollection<Module> modules = sp.getProject().getModules();
+        BeModelCollection<Module> modules = injector.getProject().getModules();
 
         assertTrue(modules.get("core") != null);
     }
