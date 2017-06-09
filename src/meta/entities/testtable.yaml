@@ -12,7 +12,7 @@ testtable:
     - name:
         type: VARCHAR(20)
     - value:
-        type: VARCHAR(30)
+        type: INT
   queries:
   - Test 1D:
       type: 1D
@@ -56,7 +56,7 @@ testtable:
   - Edit:
       records: 2
       roles: Administrator
-      code: com.developmentontheedge.be5.api.operationstest.SilentEditOperation
+      code: com.developmentontheedge.be5.operations.EditOperation
   - Insert:
       roles: Administrator
-      code: com.developmentontheedge.be5.api.operationstest.SilentInsertOperation
+      code: com.developmentontheedge.be5.operations.InsertOperation
