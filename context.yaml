@@ -3,7 +3,5 @@ context:
   - login: com.developmentontheedge.be5.modules.core.components.Login
   - logout: com.developmentontheedge.be5.modules.core.components.Logout
 config:
-  services:
-    logger:
-      path: '/logging.properties'
-
+  com.developmentontheedge.be5.api.services.impl.LogConfigurator:
+    path: '/logging.properties'
