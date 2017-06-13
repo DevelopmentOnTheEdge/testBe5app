@@ -15,8 +15,9 @@ public class TestOperation extends OperationSupport implements Operation
     {
         dps.add(new DynamicProperty("name", "Name", String.class,
                 presetValues.getOrDefault("name", "")));
+
         dps.add(new DynamicProperty("value", "Value", Integer.class,
-                Integer.parseInt(presetValues.getOrDefault("value", "1"))));
+                presetValues.getOrDefault("value", "1")));
 
         return dps;
     }
