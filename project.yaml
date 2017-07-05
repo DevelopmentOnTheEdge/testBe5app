@@ -5,7 +5,9 @@ testBe5app:
   modules:
   - core:
       entities: []
-  application: testtable
+  application:
+  - _welcome_
+  - testtable
   scripts:
   - Post-db
   - dictionaries
