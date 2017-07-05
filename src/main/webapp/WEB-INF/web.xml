@@ -7,6 +7,10 @@
 
  <display-name>testBe5app</display-name>
 
+ <listener>
+  <listener-class>com.developmentontheedge.be5.servlet.AuthenticationPropagationListener</listener-class>
+ </listener>
+
  <servlet>
   <servlet-name>be5</servlet-name>
   <servlet-class>com.developmentontheedge.be5.servlet.MainServlet</servlet-class>

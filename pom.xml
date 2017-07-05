@@ -121,6 +121,10 @@
     <version>9.4.3.v20170317</version>
     <configuration>
      <scanIntervalSeconds>1</scanIntervalSeconds>
+     <webApp>
+      <webInfIncludeJarPattern>^$</webInfIncludeJarPattern>
+      <containerIncludeJarPattern>^$</containerIncludeJarPattern>
+     </webApp>
     </configuration>
    </plugin>
    <plugin>
