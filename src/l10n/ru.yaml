@@ -8,6 +8,17 @@ ru:
     - topics: displayName
       entries:
       - Welcome: Добро пожаловать
+  - _logout_:
+    - topics: displayName
+      entries:
+      - Logout: Выход
+  - users:
+    - topics: displayName
+      entries:
+      - Logout: Пользователи
+    - topics: viewName
+      entries:
+      - Login: Вход
   - query.jsp:
     - topics: page
       entries:
