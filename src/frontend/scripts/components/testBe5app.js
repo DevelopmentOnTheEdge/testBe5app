@@ -1,11 +1,10 @@
 import React from 'react';
-import {bus, SideBar, document} from 'be5-react';
+import {bus, SideBar, Document} from 'be5-react';
 //import {table} from 'be5-react';
 //import {bus, SideBar, document} from 'be5-react';
 //import SplitPane from 'be5-react';
 //
-export default React.createClass({
-  displayName: 'TestBe5app',
+export default React.createClass({displayName: 'TestBe5app',
   
 //  componentDidMount: function() {
 //    bus.listen('LoggedOut', this.refresh);
@@ -19,10 +18,10 @@ export default React.createClass({
       <div>
         <h1>App frontend</h1>
         <SideBar ref="sideBar"/>
-
+        <Document ref="document"/>
       </div>
     );
-//<Document ref="document"/>
+
   },
   
   refresh: function() {
