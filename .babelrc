@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015", "react"],
+  "plugins": ["react-hot-loader/babel"],
+  "env": {
+    "test": {
+      "plugins": ["babel-plugin-dynamic-import-node", "transform-es2015-modules-commonjs"]
+    }
+  }
+}
