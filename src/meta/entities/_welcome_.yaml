@@ -7,5 +7,5 @@ _welcome_:
   - All records:
       defaultView: true
       type: static
-      roles: [Guest,SystemDeveloper]
+      roles: '@AllRoles'
       value: welcome.be
