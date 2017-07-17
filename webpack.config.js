@@ -28,7 +28,10 @@ module.exports = {
         library:  '[name]'
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+          react: path.resolve('node_modules/react'),
+        },
     },
     module: {
         loaders
