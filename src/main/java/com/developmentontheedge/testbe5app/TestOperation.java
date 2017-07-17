@@ -13,20 +13,20 @@ public class TestOperation extends OperationSupport implements Operation
     @Override
     public Object getParameters(Map<String, String> presetValues) throws Exception
     {
-        parameters.add(new DynamicProperty("name", "Name", String.class,
+        dps.add(new DynamicProperty("name", "Name", String.class,
                 presetValues.getOrDefault("name", "")));
 
-        parameters.add(new DynamicProperty("value", "Value", Integer.class,
+        dps.add(new DynamicProperty("value", "Value", Integer.class,
                 presetValues.getOrDefault("value", "1")));
 
-        return parameters;
+        return dps;
     }
 
     @Override
     public void invoke(Object parameters, OperationContext context) throws Exception
     {
         db.insert("insert into testtable (name, value) VALUES (?, ?)",
-                this.parameters.getProperty("name").getValue(), this.parameters.getProperty("value").getValue());
+                dps.getProperty("name").getValue(), dps.getProperty("value").getValue());
     }
 
 }
