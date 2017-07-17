@@ -13,12 +13,13 @@ export default React.createClass({displayName: 'TestBe5app',
 //    bus.listen('RoleChanged', this.refresh);
 //  },
 //
+//<SideBar ref="sideBar"/>
+//<Document ref="document"/>
   render: function() {
     return (
       <div>
         <h1>App frontend</h1>
-        <SideBar ref="sideBar"/>
-        <Document ref="document"/>
+
       </div>
     );
 

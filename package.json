@@ -16,7 +16,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "beanexplorer-react": "git+https://git@github.com/DevelopmentOnTheEdge/beanexplorer-react.git#v0.1.7",
-    "be5-react": "git+https://git@github.com/DevelopmentOnTheEdge/be5-react.git#v0.1.4"
+    "be5-react": "git+https://git@github.com/DevelopmentOnTheEdge/be5-react.git#v0.1.5",
+    "classnames": "^2.2.5"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
