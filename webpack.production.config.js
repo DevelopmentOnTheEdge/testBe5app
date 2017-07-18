@@ -13,11 +13,11 @@ loaders.push({
     exclude: ['node_modules']
 });
 
-let fileName = '[name].js';
-let outPath = 'build';
+let fileName = 'static/[name].js';
+let outPath = 'dist/uncompressed';
 if (env.min) {
-    fileName = '[name].min.js';
-    outPath = 'build/min';
+    fileName = 'static/[name].min.js';
+    outPath = 'dist/compressed';
 }
 
 let config = {
@@ -43,7 +43,7 @@ let config = {
         new WebpackCleanupPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new ExtractTextPlugin({
-            filename: 'style.css',
+            filename: 'static/style.css',
             allChunks: true
         }),
         new OptimizeCssAssetsPlugin(),
