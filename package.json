@@ -19,6 +19,7 @@
     "be5-react": "git+https://git@github.com/DevelopmentOnTheEdge/be5-react.git#v0.1.5",
     "bootstrap": "4.0.0-alpha.5",
     "datatables": "^1.10.13",
+    "jquery": "^3.2.1",
     "jqueryui": "^1.11.1",
     "tether": "^1.4.0",
     "underscore": "^1.8.3",

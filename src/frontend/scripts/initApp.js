@@ -5,10 +5,6 @@ import TestBe5app      from './components/testBe5app';
 import TestAction      from './actions/test';
 import '../sass/styles.scss'
 
-be5.net.request('languageSelector', {}, function(data) {
-  be5.locale.set(data.selected, data.messages);
-  be5.url.process(document.location.hash);
-});
 
 be5.registerAction('test', TestAction);
 
