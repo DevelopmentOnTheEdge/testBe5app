@@ -3,10 +3,18 @@ import React from 'react';
 import {
   StaticPage,
   Document,
-  SideBar
+  SideBar,
+  bus
 } from 'be5-react';
 
 export default React.createClass({displayName: 'TestBe5app',
+
+  componentDidMount: function() {
+    bus.listen('LoggedOut', this.refresh);
+    bus.listen('LoggedIn', this.refresh);
+    bus.listen('LanguageChanged', this.refresh);
+    bus.listen('RoleChanged', this.refresh);
+  },
 
   render: function() {
     return (

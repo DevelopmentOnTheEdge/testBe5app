@@ -13,7 +13,7 @@
     "coveralls": "npm run-script coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
-    "be5-react": "git+https://git@github.com/DevelopmentOnTheEdge/be5-react.git#v0.1.5",
+    "be5-react": "git+https://git@github.com/DevelopmentOnTheEdge/be5-react.git#v0.1.6",
     "beanexplorer-react": "git+https://git@github.com/DevelopmentOnTheEdge/beanexplorer-react.git#v0.1.7",
     "bootstrap": "4.0.0-alpha.5",
     "bundle-loader": "^0.5.5",
