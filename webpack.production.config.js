@@ -1,3 +1,4 @@
+"use strict";
 var webpack = require('webpack');
 var path = require('path');
 const env  = require('yargs').argv.env; // use --env with webpack 2
