@@ -29,6 +29,7 @@ let config = {
         publicPath: '/',
         path: path.join(__dirname, outPath),
         filename: fileName,
+        chunkFilename : 'static/app-[name]-[id].js',
         library:  '[name]'
     },
     resolve: {
