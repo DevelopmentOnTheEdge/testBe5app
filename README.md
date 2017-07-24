@@ -22,3 +22,7 @@ mvn be5:create-db
 ```sh
 mvn jetty:run
 ```
+
+#### Authentication
+Login: Administrator  
+Password: 12345
