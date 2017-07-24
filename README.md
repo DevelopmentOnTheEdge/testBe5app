@@ -20,7 +20,7 @@ mvn be5:create-db
 ```
 #### Run Test Be5 application!
 ```sh
-mvn jetty:run
+mvn clean install jetty:run -Djetty.http.port=8200
 ```
 
 #### Authentication
