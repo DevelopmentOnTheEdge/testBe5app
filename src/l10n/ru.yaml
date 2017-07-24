@@ -35,6 +35,7 @@ ru:
   - testtable:
     - topics: operationName
       entries:
+      - TestOperation: Тестовая операция
       - Delete: Удалить
       - Edit: Редактировать
       - Insert: Добавить

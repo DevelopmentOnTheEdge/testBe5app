@@ -47,8 +47,9 @@ testtable:
             </if>
   operations:
   - TestOperation:
+      type: Groovy
       roles: Administrator
-      code: com.developmentontheedge.testbe5app.TestOperation
+      file: TestOperation.groovy
   - Delete:
       records: 2
       roles: Administrator

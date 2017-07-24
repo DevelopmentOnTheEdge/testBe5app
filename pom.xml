@@ -124,7 +124,7 @@
     <artifactId>jetty-maven-plugin</artifactId>
     <version>9.4.3.v20170317</version>
     <configuration>
-     <scanIntervalSeconds>1</scanIntervalSeconds>
+     <scanIntervalSeconds>0</scanIntervalSeconds>
      <webApp>
       <webInfIncludeJarPattern>^$</webInfIncludeJarPattern>
       <containerIncludeJarPattern>^$</containerIncludeJarPattern>
