@@ -8,7 +8,7 @@ class TestOperation extends OperationSupport implements Operation
 {
 
     @Override
-    Object getParameters(Map<String, String> presetValues) throws Exception
+    Object getParameters(Map<String, Object> presetValues) throws Exception
     {
         dps << [name: "name", DISPLAY_NAME: "Имя"]
 
