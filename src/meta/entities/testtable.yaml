@@ -12,6 +12,7 @@ testtable:
     - name:
         type: VARCHAR(20)
     - value:
+        canBeNull: true
         type: INT
   queries:
   - Test 1D:
@@ -53,11 +54,11 @@ testtable:
   - Delete:
       records: 2
       roles: Administrator
-      code: com.developmentontheedge.be5.operations.DeleteOperation
+      code: com.developmentontheedge.be5.operations.SilentDeleteOperation
   - Edit:
       records: 1
       roles: Administrator
-      code: com.developmentontheedge.be5.operations.EditOperation
+      code: com.developmentontheedge.be5.operations.SilentEditOperation
   - Insert:
       roles: Administrator
-      code: com.developmentontheedge.be5.operations.InsertOperation
+      code: com.developmentontheedge.be5.operations.SilentInsertOperation
