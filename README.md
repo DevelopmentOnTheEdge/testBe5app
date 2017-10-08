@@ -26,3 +26,11 @@ mvn clean install jetty:run -Djetty.http.port=8200
 #### Authentication
 Login: Administrator  
 Password: 12345
+
+#### Debug, Hot Swapping With Maven, Jetty and IntelliJ
+[Hot Swapping With Maven, Jetty and IntelliJ](https://gist.github.com/naaman/1053217)
+```text
+1)In VM Parameters, enter:
+  -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=4000
+2)add Add New Configuration -> Remote 
+```

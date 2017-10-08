@@ -1,4 +1,4 @@
-package operations
+package operations.test
 
 import com.developmentontheedge.be5.operation.Operation
 import com.developmentontheedge.be5.operation.OperationContext
