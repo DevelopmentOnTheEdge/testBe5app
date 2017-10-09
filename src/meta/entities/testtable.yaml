@@ -53,6 +53,7 @@ testtable:
       roles: Administrator
       file: test/TestOperation.groovy
   - TestExtendGroovy:
+      records: 1
       type: Groovy
       roles: Administrator
       file: test/TestExtendGroovy.groovy
