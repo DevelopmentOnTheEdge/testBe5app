@@ -26,7 +26,7 @@ class TestOperation extends GOperationSupport implements Operation
     @Override
     void invoke(Object parameters) throws Exception
     {
-        setResult(OperationResult.finished("test!"))
+        setResult(OperationResult.finished("test message"))
     }
 
 }
