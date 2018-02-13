@@ -8,3 +8,7 @@ connectionProfiles:
       connectionUrl: jdbc:postgresql://localhost:5432/testbe5app
       username: test
       password: test
+    uuinnk_local:
+      connectionUrl: jdbc:postgresql://localhost:5432/testbe5app
+      username: postgres
+      password: pg

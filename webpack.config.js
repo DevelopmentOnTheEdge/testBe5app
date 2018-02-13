@@ -1,10 +1,11 @@
 "use strict";
-var webpack = require('webpack');
-var path = require('path');
-var loaders = require('./webpack.loaders');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const loaders = require('./webpack.common').loaders;
+const externals = require('./webpack.common').externals;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
@@ -50,7 +51,7 @@ module.exports = {
         host: HOST,
         proxy: {
             '/api/*' : {
-                target: 'http://localhost:8100/api/',
+                target: 'http://localhost:8200/api/',
                 secure: false,
                 changeOrigin: true,
                 pathRewrite: {
@@ -63,16 +64,16 @@ module.exports = {
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin({
-            filename: 'style.css',
-            allChunks: true
+            filename: 'static/[name]+[hash].css'
         }),
         new DashboardPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/frontend/template.html',
+            template: './src/frontend/template-dev.html',
             files: {
                 css: ['style.css'],
                 js: [ "bundle.js"],
             }
         }),
-    ]
+    ],
+    externals: externals,
 };

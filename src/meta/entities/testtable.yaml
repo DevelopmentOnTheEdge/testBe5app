@@ -23,7 +23,6 @@ testtable:
       - Edit
       - Insert
       - TestOperation
-      - TestExtendGroovy
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -52,11 +51,6 @@ testtable:
       type: Groovy
       roles: Administrator
       file: test/TestOperation.groovy
-  - TestExtendGroovy:
-      records: 1
-      type: Groovy
-      roles: Administrator
-      file: test/TestExtendGroovy.groovy
   - Delete:
       records: 2
       roles: Administrator
