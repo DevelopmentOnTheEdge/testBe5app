@@ -18,6 +18,21 @@ Download and run mvn install
 ```sh
 mvn be5:create-db
 ```
+
+#### Frontend
+Фронтенд собирается в target-frontend
+и во время сборки копируется в webapp    
+```sh
+//выкачать зависимости
+npm update
+//Режим разработки
+npm run dev
+//Для проветки быстрее собрать незжатый 
+npm run build
+//На сервере собирается
+npm run build-min
+```
+Можно также взять готовый фронтенд из https://github.com/DevelopmentOnTheEdge/be5-react/tree/master/dist/compressed
 #### Run Test Be5 application!
 ```sh
 mvn clean install jetty:run -Djetty.http.port=8200
