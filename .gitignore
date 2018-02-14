@@ -1,16 +1,29 @@
 src/profile.local
-src/main/webapp/be5
 src/lib/
 dev.yaml
 
 /.project
 /target
 
+.npmyrc
+
+### frontend build dir ###
+/src/main/webapp/static
+/src/main/webapp/WEB-INF/templates/*
+/target-frontend
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+
+### Eclipse ###
+.classpath
+.project
+.settings/
+*.ucls
+
 
 ### web ###
 node_modules/

@@ -258,7 +258,7 @@
        <arguments>
         <argument>${project.build.directory}/generated-sources/java/</argument>
         <argument/>
-        <argument>CondoInfoSite</argument>
+        <argument>${project.artifactId}</argument>
        </arguments>
       </configuration>
      </execution>
