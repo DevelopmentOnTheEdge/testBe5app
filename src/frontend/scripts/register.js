@@ -15,5 +15,3 @@ import 'be5-react/src/css/formWizard.css';
 import 'be5-react/src/css/propertySet.css';
 import 'be5-react/src/css/errorPane.css';
 import 'be5-react/src/css/main.css';
-
-//import '../css/egisso.css';

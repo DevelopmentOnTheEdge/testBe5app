@@ -23,6 +23,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
+      - Filter
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -62,3 +63,6 @@ testtable:
   - Insert:
       roles: Administrator
       code: com.developmentontheedge.be5.operations.SilentInsertOperation
+  - Filter:
+      roles: Administrator
+      code: com.developmentontheedge.be5.operations.FilterOperation
