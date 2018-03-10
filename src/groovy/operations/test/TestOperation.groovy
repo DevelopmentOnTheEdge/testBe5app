@@ -26,6 +26,7 @@ class TestOperation extends GOperationSupport implements Operation
     @Override
     void invoke(Object parameters) throws Exception
     {
+        //validator.setError(dps.getProperty("name"), "test error")
         setResult(OperationResult.finished("test message"))
     }
 
