@@ -27,8 +27,8 @@ if (env.min) {
 
 let config = {
   entry: {
-    app: './src/frontend/scripts/initApp.js',
-    manager: './src/frontend/scripts/manager.js'
+    app: ['babel-polyfill', './src/frontend/scripts/initApp.js'],
+    manager: ['babel-polyfill', './src/frontend/scripts/manager.js']
   },
   output: {
     publicPath: './',
