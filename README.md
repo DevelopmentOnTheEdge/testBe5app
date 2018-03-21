@@ -26,7 +26,7 @@ mvn be5:create-db
 //установить зависимости
 npm install
 //Режим разработки
-npm run dev
+npm start
 //Для проветки быстрее собрать незжатый 
 npm run build
 //На сервере собирается
