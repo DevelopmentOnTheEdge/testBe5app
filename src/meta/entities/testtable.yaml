@@ -65,5 +65,5 @@ testtable:
       code: com.developmentontheedge.be5.operations.SilentInsertOperation
   - Filter:
       roles: Administrator
-      layout: '{"type":"modal"}'
+      layout: '{"type":"modalForm"}'
       code: com.developmentontheedge.be5.operations.FilterOperation
