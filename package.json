@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "beanexplorer-react": "^1.0.0",
-    "be5-react": "^0.1.58",
+    "be5-react": "^0.2.7",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },

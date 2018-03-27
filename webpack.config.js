@@ -17,10 +17,11 @@ loaders.push({
 });
 
 module.exports = {
-    entry: {
-        reactHotLoader: 'react-hot-loader/patch',
-        be5app: './src/frontend/scripts/initApp.js'
-    },
+    entry: [
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        './src/frontend/scripts/manager.js'
+    ],
     devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
     output: {
         publicPath: '/',
