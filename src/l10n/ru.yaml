@@ -1,5 +1,10 @@
 ru:
   entities:
+  - index:
+    - topics: page
+      entries:
+      - title: testBe5app
+      - description: test be5 application
   - _homepage_:
     - topics: displayName
       entries:
