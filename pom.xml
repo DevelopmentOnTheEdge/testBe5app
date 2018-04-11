@@ -110,7 +110,7 @@
     <configuration>
      <url>${deployServerUrl}</url>
      <server>${deployServerName}</server>
-     <path>/condo-lk2</path>
+     <path>/testBe5app</path>
     </configuration>
    </plugin>
    <plugin>
