@@ -13,7 +13,7 @@ before_install:
     && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
     && cd ../
 install:
-  - mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test-compile -Dmaven.javadoc.skip=true -B -V
 jdk:
   - oraclejdk8
 cache:
