@@ -16,7 +16,7 @@
  </listener>
 
  <listener>
-  <listener-class>com.developmentontheedge.be5.servlet.Be5GuiceServletConfig</listener-class>
+  <listener-class>com.developmentontheedge.be5.testapp.Be5TestAppGuiceServletConfig</listener-class>
  </listener>
 
  <filter>
