@@ -1,4 +1,4 @@
-package com.developmentontheedge.be5.testapp;
+package com.developmentontheedge.be5.testbe5app;
 
 import com.developmentontheedge.be5.ServerModule;
 import com.developmentontheedge.be5.modules.core.CoreModule;

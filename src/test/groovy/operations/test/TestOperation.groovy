@@ -1,14 +1,22 @@
 package operations.test
 
+import com.developmentontheedge.be5.metadata.RoleType
 import com.developmentontheedge.be5.operation.OperationStatus
-import com.developmentontheedge.be5.test.SqlMockOperationTest
+import com.developmentontheedge.be5.testbe5app.TestBe5AppDBTest
 import com.developmentontheedge.beans.json.JsonFactory
+import org.junit.Before
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
 
-class TestOperation extends SqlMockOperationTest
+
+class TestOperation extends TestBe5AppDBTest
 {
+    @Before
+    void setUp(){
+        initUserWithRoles(RoleType.ROLE_ADMINISTRATOR)
+    }
+
     @Test
     void test()
     {
