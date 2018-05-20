@@ -3,6 +3,7 @@ package test
 import com.developmentontheedge.be5.operations.support.GOperationSupport
 import com.developmentontheedge.be5.operation.Operation
 import com.developmentontheedge.be5.operation.OperationResult
+import com.developmentontheedge.be5.util.DpsUtils
 
 
 class TestOperation extends GOperationSupport implements Operation
@@ -20,7 +21,7 @@ class TestOperation extends GOperationSupport implements Operation
             TYPE = java.sql.Date
         }
 
-        return dpsHelper.setValues(dps, presetValues)
+        return DpsUtils.setValues(dps, presetValues)
     }
 
     @Override
