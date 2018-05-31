@@ -10,7 +10,7 @@ import com.google.inject.util.Modules;
 public abstract class TestBe5AppDBTest extends TestUtils
 {
     private static final Injector injector = initInjector(
-            Modules.override(new ServerModule(), new CoreModule()).with(new TestProjectProviderModule())
+            Modules.override(new ServerModule(), new CoreModule()).with(new DbTestModule())
     );
 
     static {
