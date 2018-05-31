@@ -19,6 +19,7 @@
   <deployServerName>tomcat7</deployServerName>
   <deployServerUrl>http://localhost:8080/manager/text</deployServerUrl>
   <packaging.type>jar</packaging.type>
+  <logging.file>logging.console.properties</logging.file>
  </properties>
 
  <profiles>
@@ -26,6 +27,7 @@
    <id>war</id>
    <properties>
     <packaging.type>war</packaging.type>
+    <logging.file>logging.file.properties</logging.file>
    </properties>
    <build>
     <finalName>${project.artifactId}</finalName>
@@ -75,6 +77,7 @@
      <exclude>src/main/**/*.*</exclude>
      <exclude>target/**/*.*</exclude>
      <exclude>target-frontend/**/*.*</exclude>
+     <exclude>*.properties</exclude>
     </excludes>
    </resource>
   </resources>
@@ -185,6 +188,25 @@
        <goal>compileTests</goal>
        <goal>removeTestStubs</goal>
       </goals>
+     </execution>
+    </executions>
+   </plugin>
+
+   <plugin>
+    <groupId>com.coderplus.maven.plugins</groupId>
+    <artifactId>copy-rename-maven-plugin</artifactId>
+    <version>1.0.1</version>
+    <executions>
+     <execution>
+      <id>add-log-file</id>
+      <phase>compile</phase>
+      <goals>
+       <goal>copy</goal>
+      </goals>
+      <configuration>
+       <sourceFile>${basedir}/${logging.file}</sourceFile>
+       <destinationFile>${project.build.outputDirectory}/logging.properties</destinationFile>
+      </configuration>
      </execution>
     </executions>
    </plugin>
