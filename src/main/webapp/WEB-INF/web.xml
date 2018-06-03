@@ -12,10 +12,6 @@
  </session-config>
 
  <listener>
-  <listener-class>com.developmentontheedge.be5.server.servlet.AuthenticationPropagationListener</listener-class>
- </listener>
-
- <listener>
   <listener-class>com.developmentontheedge.be5.testbe5app.Be5TestAppGuiceServletConfig</listener-class>
  </listener>
 
