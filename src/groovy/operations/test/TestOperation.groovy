@@ -12,22 +12,22 @@ class TestOperation extends GOperationSupport implements Operation
     @Override
     Object getParameters(Map<String, Object> presetValues) throws Exception
     {
-        dps.add {
+        params.add {
             name = "name"
             DISPLAY_NAME = "Имя"
         }
 
-        dps.add("beginDate", "Дата начала") {
+        params.add("beginDate", "Дата начала") {
             TYPE = java.sql.Date
         }
 
-        return DpsUtils.setValues(dps, presetValues)
+        return DpsUtils.setValues(params, presetValues)
     }
 
     @Override
     void invoke(Object parameters) throws Exception
     {
-        //validator.setError(dps.getProperty("name"), "test error")
+        //validator.setError(params.getProperty("name"), "test error")
         setResult(OperationResult.finished("test message"))
     }
 
