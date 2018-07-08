@@ -14,7 +14,7 @@ public abstract class TestBe5AppDBTest extends TestUtils
     );
 
     static {
-        initDb(injector);
+        initDb();
     }
 
     @Override
