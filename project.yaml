@@ -5,8 +5,6 @@ testBe5app:
   modules:
   - core:
       entities: []
-  - system:
-      entities: []
   application:
   - _welcome_
   - testtable
