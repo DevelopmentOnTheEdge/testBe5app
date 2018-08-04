@@ -23,6 +23,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
+      - AddRemoveCategory
       - Filter
       code: |2-
             SELECT
@@ -67,3 +68,7 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       code: com.developmentontheedge.be5.server.operations.FilterOperation
+  - AddRemoveCategory:
+      records: 2
+      roles: Administrator
+      code: com.developmentontheedge.be5.modules.core.operations.categories.AddRemoveCategory
