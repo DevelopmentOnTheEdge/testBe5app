@@ -1,6 +1,5 @@
 package com.developmentontheedge.be5.testbe5app;
 
-import com.developmentontheedge.be5.server.ServerModule;
 import com.developmentontheedge.be5.modules.core.CoreModule;
 import com.developmentontheedge.be5.server.servlet.Be5GuiceServletContextListener;
 import com.developmentontheedge.be5.server.servlet.TemplateModule;
@@ -14,7 +13,6 @@ public class Be5TestAppGuiceServletConfig extends Be5GuiceServletContextListener
     protected Injector getInjector()
     {
         return Guice.createInjector(
-                new ServerModule(),
                 new CoreModule(),
                 new TemplateModule()
         );
