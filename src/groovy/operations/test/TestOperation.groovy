@@ -3,7 +3,7 @@ package test
 import com.developmentontheedge.be5.server.operations.support.GOperationSupport
 import com.developmentontheedge.be5.operation.model.Operation
 import com.developmentontheedge.be5.operation.model.OperationResult
-import com.developmentontheedge.be5.base.util.DpsUtils
+import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 
 
 class TestOperation extends GOperationSupport implements Operation
