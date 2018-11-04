@@ -1,5 +1,6 @@
 testBe5app:
   features:
+  - beSqlQueries
   - documentCategories
   l10n: ru
   projectFileStructure: {}
