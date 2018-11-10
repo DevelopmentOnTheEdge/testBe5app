@@ -1,6 +1,7 @@
 testBe5app:
   features:
   - beSqlQueries
+  - eventDbLogging
   - documentCategories
   l10n: ru
   projectFileStructure: {}
