@@ -15,6 +15,7 @@ class TestOperation extends GOperationSupport implements Operation
         params.add {
             name = "name"
             DISPLAY_NAME = "Имя"
+            RELOAD_ON_CHANGE = true
         }
 
         params.add("beginDate", "Дата начала") {
