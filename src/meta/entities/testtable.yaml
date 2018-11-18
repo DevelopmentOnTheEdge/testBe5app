@@ -15,6 +15,10 @@ testtable:
         canBeNull: true
         type: INT
   queries:
+  - '*** Selection view ***':
+      type: 1D
+      operations: Filter
+      code: SELECT ID AS "Code", name AS "Name" FROM testtable
   - Test 1D:
       type: 1D
       roles: [Administrator, Guest]
