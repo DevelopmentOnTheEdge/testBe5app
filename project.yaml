@@ -3,6 +3,7 @@ testBe5app:
   - beSqlQueries
   - eventDbLogging
   - documentCategories
+  - logging
   l10n: ru
   projectFileStructure: {}
   modules:
