@@ -27,6 +27,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
+      - TestDownloadOperation
       - AddRemoveCategory
       - Filter
       code: |2-
@@ -57,6 +58,10 @@ testtable:
       type: Groovy
       roles: Administrator
       file: test/TestOperation.groovy
+  - TestDownloadOperation:
+      type: Groovy
+      roles: Administrator
+      file: test/TestDownloadOperation.groovy
   - Delete:
       records: 2
       roles: Administrator
