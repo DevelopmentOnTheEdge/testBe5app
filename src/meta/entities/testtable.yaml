@@ -57,11 +57,12 @@ testtable:
   - TestOperation:
       type: Groovy
       roles: Administrator
-      file: test/TestOperation.groovy
+      file: test.TestOperation.groovy
   - TestDownloadOperation:
       type: Groovy
       roles: Administrator
-      file: test/TestDownloadOperation.groovy
+      layout: '{"type":"modalForm"}'
+      file: test.TestDownloadOperation.groovy
   - Delete:
       records: 2
       roles: Administrator
