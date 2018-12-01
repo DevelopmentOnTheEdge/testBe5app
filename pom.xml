@@ -53,6 +53,16 @@
    <artifactId>h2</artifactId>
    <version>1.4.193</version>
   </dependency>
+  <dependency>
+   <groupId>org.eclipse.jetty</groupId>
+   <artifactId>jetty-http</artifactId>
+   <version>8.1.22.v20160922</version>
+  </dependency>
+  <dependency>
+   <groupId>org.eclipse.jetty</groupId>
+   <artifactId>jetty-servlet</artifactId>
+   <version>8.1.22.v20160922</version>
+  </dependency>
 
   <dependency>
    <groupId>com.developmentontheedge.be5</groupId>
@@ -169,6 +179,9 @@
      <webApp>
       <webInfIncludeJarPattern>^$</webInfIncludeJarPattern>
       <containerIncludeJarPattern>^$</containerIncludeJarPattern>
+      <_initParams>
+       <org.eclipse.jetty.servlet.Default.useFileMappedBuffer>false</org.eclipse.jetty.servlet.Default.useFileMappedBuffer>
+      </_initParams>
      </webApp>
      <systemProperties>
       <systemProperty>
