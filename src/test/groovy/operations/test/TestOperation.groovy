@@ -24,7 +24,9 @@ class TestOperation extends TestBe5AppDBTest
 
         assertEquals("{" +
                 "'values':{'name':'','beginDate':''}," +
-                "'meta':{'/name':{'displayName':'Имя'},'/beginDate':{'displayName':'Дата начала','type':'Date'}}," +
+                "'meta':{" +
+                    "'/name':{'displayName':'Имя','reloadOnChange':true}," +
+                    "'/beginDate':{'displayName':'Дата начала','type':'Date'}}," +
                 "'order':['/name','/beginDate']" +
             "}", oneQuotes(JsonFactory.bean(first)))
 
