@@ -33,23 +33,4 @@
   </dependency>
  </dependencies>
 
- <build>
-  <resources>
-   <resource>
-    <directory>${basedir}</directory>
-    <excludes>
-     <exclude>.*</exclude>
-     <exclude>src/html/**/*.*</exclude>
-     <exclude>.idea/**/*</exclude>
-     <exclude>src/frontend/**/*</exclude>
-     <exclude>node_modules/**/*</exclude>
-     <exclude>dist/**/*</exclude>
-     <exclude>src/main/**/*.*</exclude>
-     <exclude>target/**/*.*</exclude>
-     <exclude>target-frontend/**/*.*</exclude>
-     <exclude>*.properties</exclude>
-    </excludes>
-   </resource>
-  </resources>
- </build>
 </project>
