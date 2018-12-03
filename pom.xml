@@ -257,7 +257,7 @@
     <version>1.7</version>
     <executions>
      <execution>
-      <phase>prepare-package</phase>
+      <phase>compile</phase>
       <configuration>
        <target>
 
