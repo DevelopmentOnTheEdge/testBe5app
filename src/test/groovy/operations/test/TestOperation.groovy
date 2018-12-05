@@ -20,20 +20,9 @@ class TestOperation extends TestBe5AppDBTest
     @Test
     void test()
     {
-        Object first = generateOperation("testtable", "Test 1D", "TestOperation", "").getFirst()
-
-        assertEquals("{" +
-                "'values':{'name':'','beginDate':''}," +
-                "'meta':{" +
-                    "'/name':{'displayName':'Имя','reloadOnChange':true}," +
-                    "'/beginDate':{'displayName':'Дата начала','type':'Date'}}," +
-                "'order':['/name','/beginDate']" +
-            "}", oneQuotes(JsonFactory.bean(first)))
-
         def second = executeOperation("testtable", "Test 1D", "TestOperation", "", [name:"test", beginDate: '2017-12-20']).getSecond()
 
         assertEquals OperationStatus.FINISHED, second.getStatus()
         assertEquals "test message", second.getMessage()
     }
-
 }
