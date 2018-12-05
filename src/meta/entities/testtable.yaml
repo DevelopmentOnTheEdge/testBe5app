@@ -30,6 +30,7 @@ testtable:
       - TestDownloadOperation
       - AddRemoveCategory
       - Filter
+      - CustomFilter
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -42,6 +43,8 @@ testtable:
   - Test 1D unknown:
       type: 1D_unknown
       roles: [Administrator, Guest]
+      operations:
+      - CustomFilter
       code: |2-
             SELECT
               t.ID AS "___ID",
@@ -51,13 +54,17 @@ testtable:
               testtable t
             WHERE (1=1)
             <if parameter="ID">
-              AND t.ID = <parameter:ID/>
+              AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
             </if>
   operations:
   - TestOperation:
       type: Groovy
       roles: Administrator
       file: test.TestOperation.groovy
+  - CustomFilter:
+      type: Groovy
+      roles: Administrator
+      file: test.CustomFilter.groovy
   - TestDownloadOperation:
       type: Groovy
       roles: Administrator
