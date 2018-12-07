@@ -20,7 +20,7 @@ mvn be5:create-db
 ```
 
 #### Frontend
-Фронтенд собирается в target-frontend
+Фронтенд собирается в src/main/webapp/
 и во время сборки копируется в webapp    
 ```sh
 //установить зависимости
