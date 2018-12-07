@@ -16,7 +16,7 @@
  <packaging>${packaging.type}</packaging>
 
  <properties>
-  <deployName>testBe5app</deployName>
+  <deployPath>/testBe5app</deployPath>
  </properties>
 
  <dependencies>
