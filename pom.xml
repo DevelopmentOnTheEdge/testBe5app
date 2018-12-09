@@ -31,6 +31,11 @@
    <artifactId>h2</artifactId>
    <version>1.4.193</version>
   </dependency>
+   <dependency>
+     <groupId>com.developmentontheedge.be5</groupId>
+     <artifactId>be5-monitoring</artifactId>
+     <version>0.0.3-SNAPSHOT</version>
+   </dependency>
  </dependencies>
 
 </project>

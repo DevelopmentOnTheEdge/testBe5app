@@ -3,6 +3,7 @@ package com.developmentontheedge.be5.testbe5app;
 import com.developmentontheedge.be5.modules.core.CoreModule;
 import com.developmentontheedge.be5.modules.core.services.LoginService;
 import com.developmentontheedge.be5.modules.core.services.impl.CryptoLoginService;
+import com.developmentontheedge.be5.modules.monitoring.MetricsModule;
 import com.developmentontheedge.be5.server.ScopedServerModule;
 import com.developmentontheedge.be5.server.servlet.Be5GuiceServletContextListener;
 import com.developmentontheedge.be5.server.servlet.TemplateModule;
@@ -32,6 +33,7 @@ public class Be5TestAppGuiceServletConfig extends Be5GuiceServletContextListener
         @Override
         protected void configure()
         {
+            install(new MetricsModule());
             bind(LoginService.class).to(CryptoLoginService.class).in(Scopes.SINGLETON);
         }
     }

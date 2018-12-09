@@ -6,6 +6,6 @@ public class Be5TestAppMain
 {
     public static void main(String... args) throws Exception
     {
-        EmbeddedJettyUtils.run(new Be5TestAppGuiceServletConfig());
+        EmbeddedJettyUtils.runWebApp();
     }
 }
