@@ -6,7 +6,7 @@ import com.developmentontheedge.be5.modules.core.services.LoginService;
 import com.developmentontheedge.be5.modules.core.services.impl.CryptoLoginService;
 import com.developmentontheedge.be5.modules.monitoring.MetricsModule;
 import com.developmentontheedge.be5.server.ScopedServerModule;
-import com.developmentontheedge.be5.server.servlet.Be5GuiceServletContextListener;
+import com.developmentontheedge.be5.server.servlet.Be5ServletListener;
 import com.developmentontheedge.be5.server.servlet.TemplateModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
@@ -17,7 +17,7 @@ import com.google.inject.util.Modules;
 import static com.developmentontheedge.be5.modules.monitoring.Metrics.METRIC_REGISTRY;
 
 
-public class Be5TestAppGuiceServletConfig extends Be5GuiceServletContextListener
+public class Be5TestAppGuiceServletConfig extends Be5ServletListener
 {
     @Override
     protected Injector getInjector()
