@@ -1,5 +1,6 @@
 package com.developmentontheedge.be5.testbe5app;
 
+import com.codahale.metrics.jmx.JmxReporter;
 import com.developmentontheedge.be5.modules.core.CoreModule;
 import com.developmentontheedge.be5.modules.core.services.LoginService;
 import com.developmentontheedge.be5.modules.core.services.impl.CryptoLoginService;
@@ -13,13 +14,15 @@ import com.google.inject.Injector;
 import com.google.inject.Scopes;
 import com.google.inject.util.Modules;
 
+import static com.developmentontheedge.be5.modules.monitoring.Metrics.METRIC_REGISTRY;
+
 
 public class Be5TestAppGuiceServletConfig extends Be5GuiceServletContextListener
 {
     @Override
     protected Injector getInjector()
     {
-        return Guice.createInjector(
+        return Guice.createInjector(getStage(),
                 Modules.override(
                         new CoreModule()
                 ).with(new Be5TestAppModule()),
@@ -35,6 +38,9 @@ public class Be5TestAppGuiceServletConfig extends Be5GuiceServletContextListener
         {
             install(new MetricsModule());
             bind(LoginService.class).to(CryptoLoginService.class).in(Scopes.SINGLETON);
+
+            final JmxReporter reporter = JmxReporter.forRegistry(METRIC_REGISTRY).build();
+            reporter.start();
         }
     }
 }
