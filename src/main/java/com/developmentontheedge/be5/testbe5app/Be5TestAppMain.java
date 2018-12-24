@@ -4,8 +4,8 @@ import com.developmentontheedge.be5.jetty.EmbeddedJettyUtils;
 
 public class Be5TestAppMain
 {
-    public static void main(String... args) throws Exception
+    public static void main(String... args)
     {
-        EmbeddedJettyUtils.runWebApp();
+        new EmbeddedJettyUtils().run();
     }
 }
