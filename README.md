@@ -17,23 +17,35 @@ Download and run mvn install
 - create database
 ```sh
 mvn be5:create-db
+или если нужно только обновить
+mvn be5:sync
 ```
 
 #### Frontend
 Фронтенд собирается в src/main/webapp/
-и во время сборки копируется в webapp    
 ```sh
 //установить зависимости
 npm install
 //Режим разработки
 npm start
-//Для проветки быстрее собрать незжатый 
+//На своей машине быстрее собрать незжатый 
 npm run build
 //На сервере собирается
 npm run build-min
 ```
 Можно также взять готовый фронтенд из https://github.com/DevelopmentOnTheEdge/be5-react/tree/master/dist/compressed
 #### Run Test Be5 application!
+Просто запустите main метод
+```java
+public class Be5TestAppMain
+{
+    public static void main(String... args)
+    {
+        new EmbeddedJetty().run();
+    }
+}
+```
+Или 
 ```sh
 mvn clean install jetty:run -Djetty.http.port=8200
 ```
@@ -42,6 +54,7 @@ mvn clean install jetty:run -Djetty.http.port=8200
 Login: Administrator  
 Password: 12345
 
+Если вы воспользовались вторым вариантом запуска тогда нужно настроить debug
 #### Debug, Hot Swapping With Maven, Jetty and IntelliJ
 [Hot Swapping With Maven, Jetty and IntelliJ](https://gist.github.com/naaman/1053217)
 ```text
