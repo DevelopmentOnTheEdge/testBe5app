@@ -4,6 +4,7 @@ testBe5app:
   - eventDbLogging
   - documentCategories
   - logging
+  - compiledGroovy
   l10n: ru
   projectFileStructure: {}
   modules:
