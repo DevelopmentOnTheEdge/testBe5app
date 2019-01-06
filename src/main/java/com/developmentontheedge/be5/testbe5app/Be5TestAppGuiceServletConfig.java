@@ -35,8 +35,17 @@ public class Be5TestAppGuiceServletConfig extends Be5ServletListener
         {
             install(new MetricsModule());
 
-            final JmxReporter reporter = JmxReporter.forRegistry(METRIC_REGISTRY).build();
-            reporter.start();
+            final JmxReporter jmxReporter = JmxReporter.forRegistry(METRIC_REGISTRY).build();
+            jmxReporter.start();
+
+//            final Graphite graphite = new Graphite(new InetSocketAddress("127.0.0.1", 2003));
+//            final GraphiteReporter graphiteReporter = GraphiteReporter.forRegistry(METRIC_REGISTRY)
+//                    .prefixedWith("testApp.com")
+//                    .convertRatesTo(TimeUnit.SECONDS)
+//                    .convertDurationsTo(TimeUnit.MILLISECONDS)
+//                    .filter(MetricFilter.ALL)
+//                    .build(graphite);
+//            graphiteReporter.start(1, TimeUnit.MINUTES);
         }
     }
 }
