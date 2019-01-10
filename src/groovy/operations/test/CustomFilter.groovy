@@ -1,6 +1,6 @@
 package test
 
-import com.developmentontheedge.be5.base.model.GDynamicPropertySetSupport
+import com.developmentontheedge.be5.model.GDynamicPropertySetSupport
 import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 import com.developmentontheedge.be5.server.operations.FilterOperation
 import com.developmentontheedge.beans.DynamicPropertySet
