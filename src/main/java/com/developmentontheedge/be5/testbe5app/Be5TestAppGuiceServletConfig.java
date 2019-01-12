@@ -2,6 +2,7 @@ package com.developmentontheedge.be5.testbe5app;
 
 import com.codahale.metrics.jmx.JmxReporter;
 import com.developmentontheedge.be5.modules.core.CoreModule;
+import com.developmentontheedge.be5.modules.core.CoreServletModule;
 import com.developmentontheedge.be5.modules.monitoring.MetricsModule;
 import com.developmentontheedge.be5.server.ScopedServerModule;
 import com.developmentontheedge.be5.server.servlet.Be5ServletListener;
@@ -27,6 +28,7 @@ public class Be5TestAppGuiceServletConfig extends Be5ServletListener
         protected void configure()
         {
             install(new CoreModule());
+            install(new CoreServletModule());
             install(new ScopedServerModule());
             install(new TemplateModule());
             install(new MetricsModule());
