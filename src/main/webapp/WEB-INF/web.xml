@@ -20,6 +20,9 @@
  <listener>
   <listener-class>com.developmentontheedge.be5.modules.monitoring.Be5InstrumentedFilterContextListener</listener-class>
  </listener>
+ <listener>
+  <listener-class>com.developmentontheedge.be5.modules.monitoring.MetricsSessionListener</listener-class>
+ </listener>
 
  <listener>
   <listener-class>com.developmentontheedge.be5.testbe5app.Be5TestAppGuiceServletConfig</listener-class>
