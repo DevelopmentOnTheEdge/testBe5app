@@ -42,6 +42,7 @@ testtable:
               testtable t
   - Test 1D unknown:
       type: 1D_unknown
+      invisible: true
       roles: [Administrator, Guest]
       operations:
       - CustomFilter

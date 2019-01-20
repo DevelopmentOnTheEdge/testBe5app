@@ -29,7 +29,7 @@ class TestDownloadOperation extends DownloadOperationSupport implements Operatio
     void invokeWithResponse(Response res, Object parameters)
     {
         def params = (GDynamicPropertySetSupport) parameters
-        String text = "test: "
+        String text = "test: " + params.getValueAsString("name")
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8))
         RequestUtils.sendFile(res, true, "test.txt", MediaType.PLAIN_TEXT_UTF_8.type(),
                 StandardCharsets.UTF_8.name(), byteArrayInputStream)
