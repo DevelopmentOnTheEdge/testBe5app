@@ -1,4 +1,4 @@
-package test
+package operations.test
 
 import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 import com.developmentontheedge.be5.groovy.GDynamicPropertySetSupport

@@ -1,4 +1,8 @@
 testBe5app:
+  projectFileStructure:
+    groovyQueriesDir: src/groovy
+    groovyOperationsDir: src/groovy
+    groovyExtendersDir: src/groovy
   features:
   - beSqlQueries
   - eventDbLogging
@@ -6,7 +10,6 @@ testBe5app:
   - logging
   - compiledGroovy
   l10n: ru
-  projectFileStructure: {}
   modules:
   - core:
       entities: []

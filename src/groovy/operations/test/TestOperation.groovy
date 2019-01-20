@@ -1,4 +1,4 @@
-package test
+package operations.test
 
 import com.developmentontheedge.be5.server.operations.support.GOperationSupport
 import com.developmentontheedge.be5.operation.Operation

@@ -1,4 +1,4 @@
-package com.developmentontheedge.be5.testbe5app
+package services
 
 import com.developmentontheedge.be5.database.DbService
 import com.developmentontheedge.be5.query.model.beans.QRec

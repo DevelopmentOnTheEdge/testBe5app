@@ -1,7 +1,7 @@
 import com.developmentontheedge.be5.testbe5app.TestBe5AppDBTest
-import com.developmentontheedge.be5.testbe5app.TestRecords
 import org.junit.Assert
 import org.junit.Test
+import services.TestRecords
 
 import javax.inject.Inject
 
