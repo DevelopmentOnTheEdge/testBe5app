@@ -28,6 +28,7 @@ testtable:
       - Insert
       - TestOperation
       - TestDownloadOperation
+      - TestUploadOperation
       - AddRemoveCategory
       - Filter
       - CustomFilter
@@ -71,6 +72,11 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       file: operations.test.TestDownloadOperation.groovy
+  - TestUploadOperation:
+      type: Groovy
+      roles: Administrator
+      layout: '{"type":"modalForm"}'
+      file: operations.test.TestUploadOperation.groovy
   - Delete:
       records: 2
       roles: Administrator
