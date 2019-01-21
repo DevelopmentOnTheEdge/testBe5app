@@ -4,7 +4,6 @@ import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 import com.developmentontheedge.be5.groovy.GDynamicPropertySetSupport
 import com.developmentontheedge.be5.operation.Operation
 import com.developmentontheedge.be5.server.operations.support.OperationSupport
-import com.developmentontheedge.be5.web.impl.FileUploadWrapper
 
 class TestUploadOperation extends OperationSupport implements Operation
 {
@@ -24,10 +23,9 @@ class TestUploadOperation extends OperationSupport implements Operation
     @Override
     void invoke(Object parameters)
     {
-        def uploadWrapper = (FileUploadWrapper) request.getRawRequest()
-        def item = uploadWrapper.getFileItem("name")
+        def item = getFileItem("name")
         File writeFile = new File(System.getProperty("user.dir") + "/target/" + item.getName())
-        item.write( writeFile )
+        item.write(writeFile)
         setResultFinished()
     }
 }
