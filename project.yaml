@@ -1,8 +1,8 @@
 testBe5app:
   projectFileStructure:
-    groovyQueriesDir: src/groovy
-    groovyOperationsDir: src/groovy
-    groovyExtendersDir: src/groovy
+    groovyQueriesDir: src/main/groovy
+    groovyOperationsDir: src/main/groovy
+    groovyExtendersDir: src/main/groovy
   features:
   - beSqlQueries
   - eventDbLogging
@@ -19,3 +19,5 @@ testBe5app:
   scripts:
   - Post-db
   - dictionaries
+
+

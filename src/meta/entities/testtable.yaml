@@ -61,16 +61,16 @@ testtable:
   - TestOperation:
       type: Groovy
       roles: Administrator
-      file: test.TestOperation.groovy
+      file: operations.test.TestOperation.groovy
   - CustomFilter:
       type: Groovy
       roles: Administrator
-      file: test.CustomFilter.groovy
+      file: operations.test.CustomFilter.groovy
   - TestDownloadOperation:
       type: Groovy
       roles: Administrator
       layout: '{"type":"modalForm"}'
-      file: test.TestDownloadOperation.groovy
+      file: operations.test.TestDownloadOperation.groovy
   - Delete:
       records: 2
       roles: Administrator
