@@ -10,8 +10,9 @@ class TestUploadOperation extends GOperationSupport
     {
         params.add {
             TYPE = File
-            name = "name"
+            name = "files"
             DISPLAY_NAME = "Имя"
+            MULTIPLE_SELECTION_LIST = true
         }
 
         return DpsUtils.setValues(params, presetValues)
@@ -20,9 +21,12 @@ class TestUploadOperation extends GOperationSupport
     @Override
     void invoke(Object parameters)
     {
-        def item = getFileItem("name")
-        File writeFile = new File(System.getProperty("user.dir") + "/target/" + item.getName())
-        item.write(writeFile)
+        String[] files = params.getValue("files")
+        for (String file : files) {
+            def fileItem = getFileItem(file)
+            File writeFile = new File(System.getProperty("user.dir") + "/target/" + fileItem.getName())
+            fileItem.write(writeFile)
+        }
         setResultFinished()
     }
 }
