@@ -1,16 +1,13 @@
 package operations.test
 
 import com.developmentontheedge.be5.databasemodel.util.DpsUtils
-import com.developmentontheedge.be5.groovy.GDynamicPropertySetSupport
-import com.developmentontheedge.be5.operation.Operation
-import com.developmentontheedge.be5.server.operations.support.OperationSupport
+import com.developmentontheedge.be5.server.operations.support.GOperationSupport
 
-class TestUploadOperation extends OperationSupport implements Operation
+class TestUploadOperation extends GOperationSupport
 {
     @Override
     Object getParameters(Map<String, Object> presetValues) throws Exception
     {
-        def params = new GDynamicPropertySetSupport()
         params.add {
             TYPE = File
             name = "name"
