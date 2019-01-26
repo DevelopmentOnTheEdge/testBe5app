@@ -13,8 +13,8 @@
     "coveralls": "npm run-script coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
-    "beanexplorer-react": "^1.0.0",
-    "be5-react": "^0.2.7",
+    "be5-react": "^0.2.101",
+    "beanexplorer-react": "^1.0.23",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },
