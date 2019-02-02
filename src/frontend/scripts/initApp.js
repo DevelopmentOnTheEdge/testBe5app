@@ -6,11 +6,25 @@ import './register';
 
 
 const store = createBaseStore(rootReducer);
-be5init.init(store);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Application/>
-  </Provider>,
-  document.getElementById('app')
-);
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    document.getElementById('app'),
+  )
+};
+
+be5init.init(store, function () {
+  render(Application);
+});
+
+//Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./components/Application', () => {
+    render(Application)
+  })
+}
