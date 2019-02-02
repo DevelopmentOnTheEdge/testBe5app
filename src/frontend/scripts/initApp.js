@@ -1,4 +1,5 @@
 import ReactDOM     from 'react-dom';
+import { AppContainer } from 'react-hot-loader'
 import React        from 'react';
 import { Provider } from 'react-redux';
 import {Application, be5init, createBaseStore, rootReducer} from 'be5-react';
