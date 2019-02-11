@@ -1,7 +1,7 @@
 import ReactDOM     from 'react-dom';
 import React        from 'react';
 import { Provider } from 'react-redux';
-import {Application, be5init, createBaseStore, rootReducer} from 'be5-react';
+import {Application, initBe5App, createBaseStore, rootReducer} from 'be5-react';
 import './register';
 
 
@@ -18,7 +18,7 @@ const render = Component => {
   )
 };
 
-be5init.init(store, function () {
+initBe5App(store, function () {
   render(Application);
 });
 
