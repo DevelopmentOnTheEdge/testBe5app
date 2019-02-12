@@ -26,6 +26,7 @@ class TestUploadOperation extends GOperationSupport
             def fileItem = getFileItem(file)
             File writeFile = new File(System.getProperty("user.dir") + "/target/" + fileItem.getName())
             fileItem.write(writeFile)
+            fileItem.delete()
         }
 
 //        File[] files = (File[]) params.getValue("files")
