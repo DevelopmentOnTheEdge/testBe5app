@@ -1,5 +1,6 @@
 import ReactDOM     from 'react-dom';
 import React        from 'react';
+import {AppContainer} from 'react-hot-loader'
 import { Provider } from 'react-redux';
 import {Application, initBe5App, createBaseStore, rootReducer} from 'be5-react';
 import './register';
