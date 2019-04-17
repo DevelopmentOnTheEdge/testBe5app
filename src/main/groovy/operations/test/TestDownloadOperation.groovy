@@ -7,9 +7,11 @@ import com.developmentontheedge.be5.server.operations.support.DownloadOperationS
 import com.developmentontheedge.be5.server.util.RequestUtils
 import com.developmentontheedge.be5.web.Response
 import com.google.common.net.MediaType
+import groovy.transform.TypeChecked
 
 import java.nio.charset.StandardCharsets
 
+@TypeChecked
 class TestDownloadOperation extends DownloadOperationSupport implements Operation
 {
     @Override
