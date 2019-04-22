@@ -9,6 +9,7 @@ Test project based on https://github.com/DevelopmentOnTheEdge/be5
 Download and run mvn install
 - https://github.com/DevelopmentOnTheEdge/xmltest
 - https://github.com/DevelopmentOnTheEdge/beanexplorer
+- https://github.com/DevelopmentOnTheEdge/be-sql
 - https://github.com/DevelopmentOnTheEdge/be5
 
 #### Database

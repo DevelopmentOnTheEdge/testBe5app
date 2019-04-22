@@ -2,7 +2,9 @@ package operations.test
 
 import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 import com.developmentontheedge.be5.server.operations.support.GOperationSupport
+import groovy.transform.TypeChecked
 
+@TypeChecked
 class TestUploadOperation extends GOperationSupport
 {
     @Override
@@ -21,11 +23,12 @@ class TestUploadOperation extends GOperationSupport
     @Override
     void invoke(Object parameters)
     {
-        String[] fileNames = params.getValue("files")
+        String[] fileNames = (String[]) params.getValue("files")
         for (String file : fileNames) {
             def fileItem = getFileItem(file)
             File writeFile = new File(System.getProperty("user.dir") + "/target/" + fileItem.getName())
             fileItem.write(writeFile)
+            fileItem.delete()
         }
 
 //        File[] files = (File[]) params.getValue("files")
