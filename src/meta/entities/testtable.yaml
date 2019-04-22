@@ -65,10 +65,27 @@ testtable:
       code: |2-
           SELECT
             t.name,
-            '<sql>
+            '<sql beautifierName="json">
               SELECT
-              u.name,
-              '<sql>SELECT CONCAT('(', u.name, ')') FROM testtable u order by id limit 3</sql>' AS "test2"
+                u.name AS "name",
+                u.value AS "value"
+              FROM testtable u order by id limit 3
+            </sql>' AS "test"
+          FROM testtable t
+  - subQuery3:
+      type: 1D_unknown
+      invisible: true
+      roles: [Administrator, Guest]
+      code: |2-
+          SELECT
+            t.name,
+            '<sql beautifierName="json">
+              SELECT
+                u.name AS "name",
+                '<sql beautifierName="line">
+                   SELECT CONCAT('(', u.name, ' - ', u.value, ')') AS "test"
+                   FROM testtable u order by id limit 3
+                </sql>' AS "test2"
               FROM testtable u order by id limit 3
             </sql>' AS "test"
           FROM testtable t
