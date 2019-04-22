@@ -58,6 +58,20 @@ testtable:
             <if parameter="ID">
               AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
             </if>
+  - subQuery:
+      type: 1D_unknown
+      invisible: true
+      roles: [Administrator, Guest]
+      code: |2-
+          SELECT
+            t.name,
+            '<sql>
+              SELECT
+              u.name,
+              '<sql>SELECT CONCAT('(', u.name, ')') FROM testtable u order by id limit 3</sql>' AS "test2"
+              FROM testtable u order by id limit 3
+            </sql>' AS "test"
+          FROM testtable t
   operations:
   - TestOperation:
       type: Groovy
