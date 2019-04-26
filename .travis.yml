@@ -8,6 +8,10 @@ before_install:
     && cd beanexplorer
     && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
     && cd ../
+  - git clone https://github.com/DevelopmentOnTheEdge/be-sql.git
+    && cd be-sql
+    && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
+    && cd ../
   - git clone https://github.com/DevelopmentOnTheEdge/be5.git
     && cd be5
     && mvn install -DskipTests=true -Dmaven.javadoc.skip=true
