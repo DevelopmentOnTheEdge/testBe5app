@@ -27,6 +27,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
+      - TestOperationInnerDps
       - TestDownloadOperation
       - TestUploadOperation
       - AddRemoveCategory
@@ -104,6 +105,11 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       file: operations.test.TestDownloadOperation.groovy
+  - TestOperationInnerDps:
+      type: Groovy
+      roles: Administrator
+#      layout: '{"type":"modalForm"}'
+      file: operations.test.TestOperationInnerDps.groovy
   - TestUploadOperation:
       type: Groovy
       roles: Administrator

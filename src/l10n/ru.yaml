@@ -41,6 +41,7 @@ ru:
     - topics: operationName
       entries:
       - TestOperation: Тестовая операция
+      - TestOperationInnerDps: Операция с вложенным DPS
       - Delete: Удалить
       - Edit: Редактировать
       - Insert: Добавить
