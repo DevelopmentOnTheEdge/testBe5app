@@ -20,7 +20,7 @@ module.exports = {
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
-        './src/frontend/scripts/manager.js'
+        './src/frontend/scripts/initApp.js'
     ],
     devtool: process.env.WEBPACK_DEVTOOL || 'eval-source-map',
     output: {
@@ -39,7 +39,7 @@ module.exports = {
         loaders
     },
     devServer: {
-        contentBase: "./public",
+        contentBase: "./src/frontend",
         // do not print bundle build stats
         noInfo: true,
         // enable HMR
@@ -57,6 +57,14 @@ module.exports = {
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''
+                }
+            },
+            '/static/*' : {
+                target: 'http://localhost:8200/static/',
+                secure: false,
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/static': ''
                 }
             }
         }
