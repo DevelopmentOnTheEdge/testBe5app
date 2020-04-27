@@ -4,7 +4,7 @@
   "main": "src/frontend/scripts/main.js",
   "scripts": {
     "ws": "ws -d dist/uncompressed",
-    "start": "webpack-dev-server --host 127.0.0.1 --progress --profile --colors",
+    "start": "webpack-dev-server --host 127.0.0.1 --progress --profile --colors --hot",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors --env.build",
     "build-min": "webpack --config webpack.production.config.js --progress --profile --colors --env.build --env.min",
     "test": "jest",
@@ -13,8 +13,8 @@
     "coveralls": "npm run-script coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
-    "be5-react": "^0.2.101",
-    "beanexplorer-react": "^1.0.23",
+    "be5-react": "^0.2.146",
+    "beanexplorer-react": "^1.0.37",
     "react": "15.6.1",
     "react-dom": "15.6.1"
   },

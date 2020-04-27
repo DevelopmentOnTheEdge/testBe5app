@@ -8,23 +8,23 @@ import './register';
 
 const store = createBaseStore(rootReducer);
 const render = Component => {
-  ReactDOM.render(
-    <AppContainer>
-      <Provider store={store}>
-        <Component />
-      </Provider>
-    </AppContainer>,
-    document.getElementById('app'),
-  )
+    ReactDOM.render(
+        <AppContainer>
+            <Provider store={store}>
+                <Component />
+            </Provider>
+        </AppContainer>,
+        document.getElementById('app'),
+    )
 };
 
 initBe5App(store, function () {
-  render(Application);
+    render(Application);
 });
 
 //Webpack Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./register.js', () => {
-    render(Application)
-  })
+    module.hot.accept('./register.js', () => {
+        render(Application)
+    })
 }
