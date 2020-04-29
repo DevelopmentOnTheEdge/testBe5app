@@ -42,20 +42,24 @@ class TestOperationNestedDps extends GOperationSupport implements Operation {
         }
 
         nestedDPS2.add {
-            name = "nestedProp3Level1"; DISPLAY_NAME = "Nested property 3 level 1";
+            name = "nestedProp2Level1"; DISPLAY_NAME = "Nested property 2 level 1";
             value = "nested prop2 val4 level 1"
         }
 
+
         nestedDPS2.add {
-            name = "nestedProp2Level1"; DISPLAY_NAME = "Nested DPS name 3 level 2";
+            name = "nestedProp3Level1"; DISPLAY_NAME = "Nested DPS name 3 level 2";
             value = nestedDPS3
         }
 
         nestedDPS3.add { name = "nestedProp1Level2"; DISPLAY_NAME = "Nested property 1 level 2";
-            value = "nested prop1 val5 level 1" }
+            value = "nested prop1 val5 level 2" }
 
         nestedDPS3.add { name = "nestedProp2Level2"; DISPLAY_NAME = "Nested property 2 level 2";
-            value = "nested prop1 val6 level 1" }
+            value = "nested prop1 val6 level 2" }
+
+        nestedDPS3.add { name = "nestedProp3Level2"; DISPLAY_NAME = "Nested property 2 level 2";
+            value = "nested prop1 val7 level 2" }
 
 
         params.add { name = "prop4"; DISPLAY_NAME = "Property 4"; value = DateUtils.currentDate() }
