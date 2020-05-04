@@ -5,6 +5,8 @@ import com.developmentontheedge.be5.groovy.GDynamicPropertySetSupport
 import com.developmentontheedge.be5.operation.Operation
 import com.developmentontheedge.be5.server.operations.support.GOperationSupport
 import com.developmentontheedge.be5.util.DateUtils
+import com.developmentontheedge.beans.DynamicProperty
+import com.developmentontheedge.beans.DynamicPropertySet
 import groovy.transform.TypeChecked
 
 @TypeChecked
@@ -81,6 +83,23 @@ class TestOperationNestedDps extends GOperationSupport implements Operation {
 
     @Override
     void invoke(Object parameters) throws Exception {
-        setResultFinished(params.asMap().toString())
+        StringBuilder result = new StringBuilder()
+        String indent = ""
+        makeResult(result, (DynamicPropertySet)parameters, indent)
+        setResultFinished(result.toString())
+    }
+
+    static makeResult(StringBuilder result, DynamicPropertySet dps, String indent) {
+        for (DynamicProperty dp : dps) {
+            if (dp.value instanceof DynamicPropertySet) {
+                result.append("${indent}<strong>${dp.displayName} -></strong><br/>")
+                def space = "&nbsp;"
+                indent += space * dp.displayName.length();
+                makeResult(result, dp.value as DynamicPropertySet,indent)
+                indent = indent.substring(space.length() * dp.displayName.length());
+            } else {
+                result.append("${indent}${dp.displayName} -> ${dp.value}<br/>")
+            }
+        }
     }
 }
