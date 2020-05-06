@@ -27,7 +27,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
-      - TestOperationNestedDps
+      - TestNestedDpsOperation
       - TestDownloadOperation
       - TestUploadOperation
       - AddRemoveCategory
@@ -105,11 +105,16 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       file: operations.test.TestDownloadOperation.groovy
-  - TestOperationNestedDps:
+  - TestNestedDpsOperation:
       type: Groovy
       roles: Administrator
 #      layout: '{"type":"modalForm"}'
-      file: operations.test.TestOperationNestedDps.groovy
+      file: operations.test.TestNestedDpsOperation.groovy
+  - TestTabedOperation:
+      type: Groovy
+      roles: Administrator
+#      layout: '{"type":"modalForm"}'
+      file: operations.test.TestTabedOperation.groovy
   - TestUploadOperation:
       type: Groovy
       roles: Administrator

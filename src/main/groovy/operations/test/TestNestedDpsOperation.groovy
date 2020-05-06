@@ -10,7 +10,7 @@ import com.developmentontheedge.beans.DynamicPropertySet
 import groovy.transform.TypeChecked
 
 @TypeChecked
-class TestOperationNestedDps extends GOperationSupport implements Operation {
+class TestNestedDpsOperation extends GOperationSupport implements Operation {
     @Override
     Object getParameters(Map<String, Object> presetValues) throws Exception {
 //        def params = new GDynamicPropertySetSupport()
