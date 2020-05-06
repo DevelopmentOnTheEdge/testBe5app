@@ -27,8 +27,9 @@ testtable:
       - Edit
       - Insert
       - TestOperation
-      - TestNestedDpsOperation
       - TestDownloadOperation
+      - TestNestedDpsOperation
+      - TestTabedOperation
       - TestUploadOperation
       - AddRemoveCategory
       - Filter
