@@ -17,20 +17,20 @@ class TestTabedOperation extends GOperationSupport implements Operation {
         }
 
         params.add {
-            TAB_ID = "1"; TAB_NAME = "TAB #1"; name = "prop2"; DISPLAY_NAME = "Property 2";
-            value = "val2 tab1"
+            TAB_ID = "1"; TAB_NAME = "first"; name = "prop2"; DISPLAY_NAME = "Property 2";
+            value = "val21"
         }
         params.add {
-            TAB_ID = "1"; TAB_NAME = "TAB #1"; name = "prop3"; DISPLAY_NAME = "Property 3";
-            value = "val3 tab1"
+            TAB_ID = "1"; TAB_NAME = "first"; name = "prop3"; DISPLAY_NAME = "Property 3";
+            value = "val31"
         }
         params.add {
-            TAB_ID = "2"; TAB_NAME = "TAB #2"; name = "prop4"; DISPLAY_NAME = "Property 4";
-            value = "val4 tab2"
+            TAB_ID = "2"; TAB_NAME = "second"; name = "prop4"; DISPLAY_NAME = "Property 4";
+            value = "val42"
         }
         params.add {
-            TAB_ID = "1"; TAB_NAME = "TAB #1"; name = "prop5"; DISPLAY_NAME = "Property 5";
-            value = "val5 tab1"
+            TAB_ID = "1"; TAB_NAME = "first"; name = "prop5"; DISPLAY_NAME = "Property 5";
+            value = "val51"
         }
 
         params.add {
