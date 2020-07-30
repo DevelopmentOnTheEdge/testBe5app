@@ -27,6 +27,7 @@ testtable:
       - Edit
       - Insert
       - TestOperation
+      - TestVerticalOperation
       - TestDownloadOperation
       - TestNestedDpsOperation
       - TestTabedOperation
@@ -95,6 +96,11 @@ testtable:
   - TestOperation:
       type: Groovy
       roles: Administrator
+      file: operations.test.TestOperation.groovy
+  - TestVerticalOperation:
+      type: Groovy
+      roles: Administrator
+      layout: '{"type":"verticalForm"}'
       file: operations.test.TestOperation.groovy
   - CustomFilter:
       type: Groovy
