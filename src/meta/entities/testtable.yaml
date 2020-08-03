@@ -61,6 +61,59 @@ testtable:
             <if parameter="ID">
               AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
             </if>
+  - Test Chart:
+      type: 1D_unknown
+      roles: [Administrator, Guest]
+      layout: '{"defaultPageLimit": 10000,"type":"chart", "xData":"column1", "yData":"column2,column4"}'
+      code: |2-
+            WITH
+              data AS (
+                  SELECT 1 AS y
+                  UNION ALL
+                  SELECT 2 AS y
+                  UNION ALL
+                  SELECT 3 AS y
+                  UNION ALL
+                  SELECT 4 AS y
+                  UNION ALL
+                  SELECT 5 AS y
+                  UNION ALL
+                  SELECT 6 AS y
+                  UNION ALL
+                  SELECT 7 AS y
+                  UNION ALL
+                  SELECT 8 AS y
+                  UNION ALL
+                  SELECT 9 AS y
+                  UNION ALL
+                  SELECT 10 AS y
+                  UNION ALL
+                  SELECT 10 AS y
+                  UNION ALL
+                  SELECT 11 AS y
+                  UNION ALL
+                  SELECT 12 AS y
+                  UNION ALL
+                  SELECT 13 AS y
+                  UNION ALL
+                  SELECT 14 AS y
+                  UNION ALL
+                  SELECT 15 AS y
+                  UNION ALL
+                  SELECT 16 AS y
+                  UNION ALL
+                  SELECT 17 AS y
+                  UNION ALL
+                  SELECT 18 AS y
+                  UNION ALL
+                  SELECT 19 AS y
+                  )
+            SELECT
+              t.y AS "column1",
+              t.y AS "column2",
+              t.y * 2 AS "column3",
+              CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y * 2 END AS "column4"
+            FROM data t
   - subQuery:
       type: 1D_unknown
       invisible: true
