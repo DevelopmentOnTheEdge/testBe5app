@@ -111,6 +111,7 @@ testtable:
             SELECT
               t.y AS "column1",
               t.y AS "column2",
+              '<chart mode="markers" name="Title from column attr" />' AS  ";column2",
               t.y * 2 AS "column3",
               CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y * 2 END AS "column4"
             FROM data t
