@@ -42,8 +42,8 @@ testtable:
               '<quick visible="true"/>;<link using="___ID" columns="ID" table="testtable" queryName="Test 1D unknown"/>'
                 AS ";Name",
               t.value AS "Value",
-              'json format' AS "JSON",
-              '<quick visible="false"/>;<link columns="_displayType_" using="json" table="testtable" queryName="Test 1D"/>'
+              'pretty json format' AS "JSON",
+              '<quick visible="false"/>;<link columns="_displayType_,_prettyJson_" using="json,yes" table="testtable" queryName="Test 1D"/>'
               AS ";JSON"
             FROM
               testtable t
