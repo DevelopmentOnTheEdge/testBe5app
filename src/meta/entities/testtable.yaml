@@ -41,7 +41,10 @@ testtable:
               t.name AS "Name",
               '<quick visible="true"/>;<link using="___ID" columns="ID" table="testtable" queryName="Test 1D unknown"/>'
                 AS ";Name",
-              t.value AS "Value"
+              t.value AS "Value",
+              'json format' AS "JSON",
+              '<quick visible="false"/>;<link columns="_displayType_" using="json" table="testtable" queryName="Test 1D"/>'
+              AS ";JSON"
             FROM
               testtable t
   - Test 1D unknown:
@@ -53,6 +56,20 @@ testtable:
       code: |2-
             SELECT
               t.ID AS "___ID",
+              t.name AS "Name",
+              t.value AS "Value"
+            FROM
+              testtable t
+            WHERE (1=1)
+            <if parameter="ID">
+              AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
+            </if>
+  - Test JSON format:
+      type: 1D_unknown
+      roles: [Administrator, Guest]
+      layout: '{"_displayType_":"json"}'
+      code: |2-
+            SELECT
               t.name AS "Name",
               t.value AS "Value"
             FROM
