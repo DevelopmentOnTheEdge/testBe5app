@@ -55,7 +55,6 @@ testtable:
       - CustomFilter
       code: |2-
             SELECT
-              t.ID AS "___ID",
               t.name AS "Name",
               t.value AS "Value"
             FROM
