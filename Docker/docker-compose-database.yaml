@@ -1,0 +1,17 @@
+#  CONTAINER_USER=$(id -u) CONTAINER_GROUP=$(id -g) docker-compose -f docker-compose-database.yaml [command]
+version: "3.8"
+services:
+  postgres-testBe5app:
+    image: postgres:9
+    container_name: postgres-testBe5app
+    expose:
+      - 54321
+    ports:
+      - 54321:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=testbe5app
+    volumes:
+      - ./testbe5app_dump.sql:/docker-entrypoint-initdb.d/testbe5app_dump.sql
+      - /home/${USER}/postgresql/testBe5app/data:/var/lib/postgresql/data
