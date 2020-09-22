@@ -13,5 +13,5 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=testbe5app
     volumes:
-      - ./testbe5app_dump.sql:/docker-entrypoint-initdb.d/testbe5app_dump.sql
+      - ./testbe5app_dump.sql.gz:/docker-entrypoint-initdb.d/testbe5app_dump.sql.gz
       - /home/${USER}/postgresql/testBe5app/data:/var/lib/postgresql/data

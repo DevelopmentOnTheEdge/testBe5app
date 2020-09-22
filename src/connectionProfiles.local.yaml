@@ -8,6 +8,10 @@ connectionProfiles:
       connectionUrl: jdbc:postgresql://localhost:5432/testbe5app
       username: test
       password: test
+    test_database_docker:
+      connectionUrl: jdbc:postgresql://localhost:54321/testbe5app
+      username: postgres
+      password: postgres
     uuinnk_local:
       connectionUrl: jdbc:postgresql://localhost:5432/testbe5app
       username: postgres
