@@ -8,7 +8,7 @@ class Application extends React.Component
         return (
             <div>
                 <Be5Components/>
-                <NavbarMenuContainer brand='Test be5 application'/>
+                <NavbarMenuContainer brand='Test be5 application' languageBox={true}/>
                 <div className="container">
                     <div className="row">
                         <Document frontendParams={{documentName: MAIN_DOCUMENT}} />

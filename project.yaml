@@ -9,7 +9,7 @@ testBe5app:
   - documentCategories
   - logging
   - compiledGroovy
-  l10n: ru
+  l10n: [en,ru]
   modules:
   - core:
       entities: []

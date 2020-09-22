@@ -5,6 +5,7 @@ _welcome_:
   primaryKey: dummy
   queries:
   - All records:
+      invisible: true
       defaultView: true
       type: static
       roles: '@AllRoles'
