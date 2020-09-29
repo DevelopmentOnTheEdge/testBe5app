@@ -13,7 +13,7 @@
     "coveralls": "npm run-script coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "dependencies": {
-    "be5-react": "^0.2.146",
+    "be5-react": "^0.2.149",
     "beanexplorer-react": "^1.0.37",
     "react": "15.6.1",
     "react-dom": "15.6.1"
@@ -36,13 +36,13 @@
     "filemanager-webpack-plugin": "^2.0.5",
     "html-webpack-plugin": "2.26.0",
     "jest": "20.0.4",
-    "json-server": "0.10.1",
+    "json-server": "^0.16.1",
     "local-web-server": "1.2.7",
-    "node-sass": "4.11.0",
+    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "2.0.0",
     "postcss-loader": "1.2.2",
     "raw-loader": "^0.5.1",
-    "react-addons-test-utils": "15.5.1",
+    "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.6.1",
     "sass-loader": "6.0.2",
