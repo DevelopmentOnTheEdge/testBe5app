@@ -22,10 +22,12 @@ testtable:
   - Test 1D:
       type: 1D
       roles: [Administrator, Guest]
+      defaultView: true
       operations:
       - Delete
       - Edit
       - Insert
+      - TestReloadButtonOperation
       - TestOperation
       - TestVerticalOperation
       - TestDownloadOperation
@@ -182,6 +184,12 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       file: operations.test.TestDownloadOperation.groovy
+  - TestReloadButtonOperation:
+      type: Groovy
+      roles: Administrator
+#      layout: '{"type":"modalForm"}'
+#      layout: '{"type":"verticalForm"}'
+      file: operations.test.TestReloadButtonOperation.groovy
   - TestNestedDpsOperation:
       type: Groovy
       roles: Administrator
