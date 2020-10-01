@@ -16,14 +16,14 @@ class TestReloadButtonOperation extends GOperationSupport implements Operation {
             value = "Add input"
             RELOAD_ON_CHANGE = true
             DISPLAY_NAME = "Add input"//work both variants
-//            CSS_CLASSES = "col-lg-3"
+            CSS_CLASSES = "col-lg-1"
         }
         params.add {
             name = "removeInput"
             EXTRA_ATTRS = [inputType: "Button"]
             value = "Remove input"
             RELOAD_ON_CHANGE = true
-//            CSS_CLASSES = "col-lg-4"
+            CSS_CLASSES = "col-lg-1 ml-2"
         }
 
         int cntProps = presetValues.findAll { it.key.startsWith("prop_") }.size();
