@@ -31,7 +31,7 @@ testtable:
       - TestOperation
       - TestVerticalOperation
       - TestDownloadOperation
-      - TestGroupCollapsedOperation
+      - TestGroupOperation
       - TestNestedDpsOperation
       - TestTabedOperation
       - TestUploadOperation
@@ -185,11 +185,11 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm"}'
       file: operations.test.TestDownloadOperation.groovy
-  - TestGroupCollapsedOperation:
+  - TestGroupOperation:
       type: Groovy
       roles: Administrator
-#      layout: '{"type":"modalForm"}'
-      file: operations.test.TestGroupCollapsedOperation.groovy
+      layout: '{"type":"modalForm"}'
+      file: operations.test.TestGroupOperation.groovy
   - TestReloadButtonOperation:
       type: Groovy
       roles: Administrator
