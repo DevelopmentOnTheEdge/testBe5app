@@ -169,6 +169,7 @@ testtable:
   - TestOperation:
       type: Groovy
       roles: Administrator
+      layout: '{"type":"modalForm","order":10}'
       file: operations.test.TestOperation.groovy
   - TestVerticalOperation:
       type: Groovy
@@ -188,18 +189,18 @@ testtable:
   - TestGroupOperation:
       type: Groovy
       roles: Administrator
-      layout: '{"type":"modalForm"}'
+      layout: '{"type":"modalForm","order":6}'
       file: operations.test.TestGroupOperation.groovy
   - TestReloadButtonOperation:
       type: Groovy
       roles: Administrator
-#      layout: '{"type":"modalForm"}'
+      layout: '{"type":"modalForm","order":7}'
 #      layout: '{"type":"verticalForm"}'
       file: operations.test.TestReloadButtonOperation.groovy
   - TestNestedDpsOperation:
       type: Groovy
       roles: Administrator
-#      layout: '{"type":"modalForm"}'
+      layout: '{"type":"modalForm","order":8}'
       file: operations.test.TestNestedDpsOperation.groovy
   - TestTabedOperation:
       type: Groovy
@@ -209,7 +210,7 @@ testtable:
   - TestUploadOperation:
       type: Groovy
       roles: Administrator
-      layout: '{"type":"modalForm"}'
+      layout: '{"type":"modalForm","order":4}'
       file: operations.test.TestUploadOperation.groovy
   - Delete:
       records: 2
