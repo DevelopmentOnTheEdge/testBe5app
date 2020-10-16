@@ -45,6 +45,7 @@ ru:
       - Delete: Удалить
       - Edit: Редактировать
       - Insert: Добавить
+      - TopFilter: ''
     - topics: viewName
       entries:
       - All records: Все записи

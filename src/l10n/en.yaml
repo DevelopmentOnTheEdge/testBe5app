@@ -45,6 +45,7 @@ en:
       - Delete: Delete
       - Edit: Ediut
       - Insert: Insert
+      - TopFilter: ''
     - topics: viewName
       entries:
       - All records: All records
