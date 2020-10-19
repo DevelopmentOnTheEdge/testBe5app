@@ -19,11 +19,22 @@ testtable:
       type: 1D
       operations: Filter
       code: SELECT ID AS "Code", name AS "Name" FROM testtable
+  - 'Quick Filter: Test 1D Name':
+      type: 1D_unknown
+      invisible: true
+      code: |
+            SELECT DISTINCT name
+            FROM testtable ORDER
+            BY name
   - Test 1D:
       type: 1D
       roles: [Administrator, Guest]
       layout: '{"topForm":"TopFilter"}'
       defaultView: true
+      quickFilters:
+        Code:
+          queryParam: Name
+          targetQueryName: 'Quick Filter: Test 1D Name'
       operations:
       - Delete
       - Edit
