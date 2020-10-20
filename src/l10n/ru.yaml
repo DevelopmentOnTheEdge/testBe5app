@@ -49,3 +49,15 @@ ru:
     - topics: viewName
       entries:
       - All records: Все записи
+    - topics: 'Quick Filter: Test 1D name'
+      entries:
+      - test: тест
+    - topics: 'Quick Filter: Test 1D value'
+      entries:
+      - 'value 1': 'значение 1'
+      #todo localize by mask
+      - 'value $1': 'значение $1'
+    - topics: Test 1D
+      entries:
+      - Value: Значение
+      - Name: Имя
