@@ -117,6 +117,41 @@ testtable:
             <if parameter="ID">
               AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
             </if>
+  - Test 1D quickvisible as select:
+      type: 1D
+      roles: [Administrator, Guest]
+      layout: '{"topForm":"TopFilter","quickType":"select"}'
+      defaultView: true
+      operations:
+        - TopFilter
+      code: |2-
+            SELECT
+              t.ID AS     "___ID",
+              t.name AS  "Name 1",
+              '<quick visible="true"/>;<link using="___ID" columns="ID" table="testtable" queryName="Test 1D unknown"/>' AS ";Name 1",
+              t.value AS "Value 1;<quick visible='false'/>",
+              t.name AS  "Name 2;<quick visible='true'/>",
+              t.value AS "Value 2;<quick visible='false'/>",
+              t.name AS  "Name 3;<quick visible='true'/>",
+              t.value AS "Value 3;<quick visible='false'/>",
+              t.name AS  "Name 4;<quick visible='true'/>",
+              t.value AS "Value 4;<quick visible='false'/>",
+              t.name AS  "Name 5;<quick visible='true'/>",
+              t.value AS "Value 5;<quick visible='false'/>",
+              t.name AS  "Name 6;<quick visible='true'/>",
+              t.value AS "Value 6;<quick visible='false'/>",
+              t.name AS  "Name 7;<quick visible='true'/>",
+              t.value AS "Value 7;<quick visible='false'/>",
+              t.name AS  "Name 8;<quick visible='true'/>",
+              t.value AS "Value 8;<quick visible='false'/>",
+              t.name AS  "Name 9;<quick visible='true'/>",
+              t.value AS "Value 9;<quick visible='false'/>",
+              t.name AS  "Name 10",
+              t.value AS "Value 10",
+              t.name AS  "Name 11;<quick visible='true'/>",
+              t.value AS "Value 11;<quick visible='false'/>"
+            FROM
+              testtable t
   - Test Chart:
       type: 1D_unknown
       roles: [Administrator, Guest]
