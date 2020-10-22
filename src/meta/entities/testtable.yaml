@@ -130,7 +130,7 @@ testtable:
               t.name AS  "Name 1",
               '<quick visible="true"/>;<link using="___ID" columns="ID" table="testtable" queryName="Test 1D unknown"/>' AS ";Name 1",
               t.value AS "Value 1;<quick visible='false'/>",
-              t.name AS  "Name 2;<quick visible='true'/>",
+              t.name AS  "Very long name long long long 2;<quick visible='true'/>",
               t.value AS "Value 2;<quick visible='false'/>",
               t.name AS  "Name 3;<quick visible='true'/>",
               t.value AS "Value 3;<quick visible='false'/>",
