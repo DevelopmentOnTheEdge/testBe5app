@@ -53,7 +53,7 @@ ru:
       - test: тест
     - topics: 'Quick Filter: Test 1D value'
       entries:
-      - 'value 1': 'значение 1'
+      - 'value': 'значение'
       #todo localize by mask
       - 'value $1': 'значение $1'
     - topics: Test 1D

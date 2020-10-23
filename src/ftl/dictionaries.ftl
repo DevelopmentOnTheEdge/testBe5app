@@ -6,8 +6,8 @@ INSERT INTO user_roles VALUES( 'Administrator', 'Administrator' );
 INSERT INTO user_roles VALUES( 'Administrator', 'SystemDeveloper' );
 
 DELETE FROM testtable WHERE name = 'test';
-INSERT INTO testtable(name, value) VALUES ('test', 1);
-INSERT INTO testtable(name, value) VALUES ('test', 2);
+INSERT INTO testtable(name, value) VALUES ('yes', 1);
+INSERT INTO testtable(name, value) VALUES ('no', 2);
 
 DELETE FROM classifications
 WHERE categoryID IN (SELECT ID FROM categories WHERE publicID LIKE 'TEST_CATEGORY%');

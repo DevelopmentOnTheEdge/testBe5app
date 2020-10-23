@@ -19,14 +19,25 @@ testtable:
       type: 1D
       operations: Filter
       code: SELECT ID AS "Code", name AS "Name" FROM testtable
-  - 'Quick Filter: Test 1D name':
+  - 'Quick Filter: Test groovy':
+      type: Groovy
+      invisible: true
+      file: queries.test.QuickFilter.groovy
+  - 'Quick Filter: Test yes/no tags':
+      type: 1D_unknown
+      invisible: true
+      code: |
+            SELECT 'yes'
+            UNION ALL
+            SELECT 'no'
+  - 'Quick Filter: Test name':
       type: 1D_unknown
       invisible: true
       code: |
             SELECT DISTINCT name
             FROM testtable
             ORDER BY name
-  - 'Quick Filter: Test 1D value':
+  - 'Quick Filter: Test value':
       type: 1D_unknown
       invisible: true
       code: |
@@ -37,20 +48,12 @@ testtable:
               ELSE 'value 2'
             END
           FROM testtable
-          ORDER BY name
-
+          ORDER BY value
   - Test 1D:
       type: 1D
       roles: [Administrator, Guest]
       layout: '{"topForm":"TopFilter"}'
       defaultView: true
-      quickFilters:
-        By name:
-          queryParam: name
-          targetQueryName: 'Quick Filter: Test 1D name'
-        By value:
-          queryParam: value
-          targetQueryName: 'Quick Filter: Test 1D value'
       operations:
       - Delete
       - Edit
@@ -86,7 +89,6 @@ testtable:
               <if parameter="value">
                 AND t.value = '<parameter:value/>'
               </if>
-
   - Test 1D unknown:
       type: 1D_unknown
       invisible: true
@@ -103,6 +105,23 @@ testtable:
             <if parameter="ID">
               AND t.ID IN <parameter:ID multiple="true" refColumn="testtable.ID"/>
             </if>
+  - Test quick filters:
+      type: 1D_unknown
+      roles: [Administrator, Guest]
+      quickFilters:
+        By name query:
+          queryParam: name
+          targetQueryName: 'Quick Filter: Test name'
+        By name fake table:
+          queryParam: name
+          targetQueryName: 'Quick Filter: Test yes/no tags'
+        By name from groovy:
+          queryParam: name
+          targetQueryName: 'Quick Filter: Test groovy'
+        By value:
+          queryParam: value
+          targetQueryName: 'Quick Filter: Test value'
+      code: <@_copyQuery "Test 1D"/>
   - Test JSON format:
       type: 1D_unknown
       roles: [Administrator, Guest]
