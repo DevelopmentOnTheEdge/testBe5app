@@ -15,8 +15,8 @@
   "dependencies": {
     "be5-react": "^0.2.151",
     "beanexplorer-react": "^1.0.41",
-    "react": "15.6.1",
-    "react-dom": "15.6.1"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",
@@ -42,7 +42,6 @@
     "optimize-css-assets-webpack-plugin": "2.0.0",
     "postcss-loader": "1.2.2",
     "raw-loader": "^0.5.1",
-    "react-addons-test-utils": "^15.6.2",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.6.1",
     "sass-loader": "6.0.2",
