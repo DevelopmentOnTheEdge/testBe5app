@@ -14,11 +14,11 @@ rules.push({
     test: /\.scss$/,
     use: [
         'style-loader',
-        MiniCssExtractPlugin.loader,
+        // MiniCssExtractPlugin.loader,
         {loader: 'css-loader',options: {importLoaders: '1'}},
-        {loader: 'sass-loader',options: {implementation: require('sass')}}
+        {loader: 'sass-loader', options: {implementation: require('sass'), sassOptions: {outputStyle: 'expanded'}}}
     ],
-});
+})
 
 module.exports = {
     mode: "development",
