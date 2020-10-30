@@ -13,15 +13,16 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 rules.push({
     test: /\.scss$/,
     use: [
-        'style-loader',
         MiniCssExtractPlugin.loader,
         {
             loader: 'css-loader',
+/*
             options: {
                 modules: {
                     localIdentName: '[local]___[hash:base64:5]'
                 }
             }
+*/
         },
         {
             loader: 'sass-loader',
