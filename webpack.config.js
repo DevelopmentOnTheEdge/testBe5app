@@ -1,22 +1,27 @@
 "use strict";
 const webpack = require('webpack');
 const path = require('path');
-const loaders = require('./webpack.common').loaders;
+const rules = require('./webpack.common').rules;
 const externals = require('./webpack.common').externals;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
 
-loaders.push({
+rules.push({
     test: /\.scss$/,
-    loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
-    exclude: ['node_modules']
+    use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {loader: 'css-loader',options: {importLoaders: '1'}},
+        {loader: 'sass-loader',options: {implementation: require('sass')}}
+    ],
 });
 
 module.exports = {
+    mode: "development",
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
@@ -36,7 +41,7 @@ module.exports = {
         },
     },
     module: {
-        loaders
+        rules
     },
     devServer: {
         contentBase: "./src/frontend",
@@ -70,10 +75,10 @@ module.exports = {
         }
     },
     plugins: [
-        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin({
-            filename: 'static/[name]+[hash].css'
+        new MiniCssExtractPlugin({
+            filename: 'static/[name]+[hash].css',
+            esModule: false
         }),
         new DashboardPlugin(),
         new HtmlWebpackPlugin({

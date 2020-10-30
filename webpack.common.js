@@ -1,12 +1,12 @@
 module.exports = {
-  loaders: [
+  rules: [
     {
       test: /\.jsx?$/,
       exclude: /(node_modules|bower_components|public\/)/,
       use: [{
         loader: 'babel-loader',
         options: {
-          presets: [['env', {modules: false}]]
+          presets: [['@babel/env', {modules: false}]]
         }
       }]
     },
@@ -16,8 +16,15 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loaders: ['style-loader', 'css-loader?importLoaders=1'],
-      exclude: ['node_modules']
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: '1'
+          }
+        }
+      ],
     },
     {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -27,22 +34,26 @@ module.exports = {
     {
       test: /\.(woff|woff2)$/,
       exclude: /(node_modules|bower_components)/,
-      loader: "url-loader?prefix=font/&limit=5000"
+      loader: "url-loader",
+      options: {prefix: 'font', limit: 5000}
     },
     {
       test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
       exclude: /(node_modules|bower_components)/,
-      loader: "url-loader?limit=10000&mimetype=application/octet-stream"
+      loader: "url-loader",
+      options: {limit:"10000",mimetype:"application/octet-stream"}
     },
     {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
       exclude: /(node_modules|bower_components)/,
-      loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+      loader: "url-loader",
+      options: {limit:"10000",mimetype:"image/svg+xml"}
     },
     {
       test: /\.(jpg|jpeg|gif|png|ico)$/,
       exclude: /node_modules/,
-      loader:'url-loader?limit=1&name=static/images/[name].[ext]'
+      loader:'url-loader',
+      options: {limit:"6024",name:"images/[name].[ext]"}
     }
   ],
   externals: {

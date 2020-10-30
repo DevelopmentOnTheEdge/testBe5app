@@ -1,62 +1,54 @@
 "use strict";
 const webpack = require('webpack');
 const path = require('path');
-const env = require('yargs').argv.env; // use --env with webpack 2
-const loaders = require('./webpack.common').loaders;
+const rules = require('./webpack.common').rules;
 const externals = require('./webpack.common').externals;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-loaders.push({
-  test: /\.scss$/,
-  loader: ExtractTextPlugin.extract({
-    fallback: 'style-loader',
-    use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'
-  }),
-  exclude: ['node_modules']
+rules.push({
+    test: /\.scss$/,
+    use: [
+        'style-loader',
+        MiniCssExtractPlugin.loader,
+        {
+            loader: 'css-loader',
+            options: {
+                modules: {
+                    localIdentName: '[local]___[hash:base64:5]'
+                }
+            }
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                implementation: require('sass'),
+                sassOptions: {outputStyle: 'expanded'}
+            }
+        }
+    ],
 });
 
-const baseOutPath = 'src/main/webapp/';const outPath = baseOutPath + 'WEB-INF/templates';
 
-let fileName = 'static/[name]-[hash].js';
-let templateName = 'template-dev.html';
+module.exports = (env) => {
 
-if (env.min) {
-  fileName = 'static/[name]-[hash].min.js';
-  templateName = 'template.html';
-}
+  const baseOutPath = 'src/main/webapp/';
+  const outPath = baseOutPath + 'WEB-INF/templates';
 
-let config = {
-  entry: {
-    app: ['babel-polyfill', './src/frontend/scripts/initApp.js'],
-    manager: ['babel-polyfill', './src/frontend/scripts/manager.js']
-  },
-  output: {
-    publicPath: './',
-    path: path.join(__dirname, outPath),
-    filename: fileName,
-    chunkFilename: 'static/app-[name]-[id].js',
-    library: '[name]'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      react: path.resolve('node_modules/react'),
-    },
-  },
-  module: {
-    loaders
-  },
-  plugins: [
+  let fileName =     env.min ? 'static/[name]-[hash].min.js' : 'static/[name]-[hash].js';
+  let templateName = env.min ? 'template.html' : 'template-dev.html';
+
+  const plugins = [
     //new BundleAnalyzerPlugin(),
     new WebpackCleanupPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new ExtractTextPlugin({
-      filename: 'static/css/[name]+[hash].css'
+    new MiniCssExtractPlugin({
+      filename: 'static/css/[name]+[hash].css',
+      esModule: false
     }),
     new OptimizeCssAssetsPlugin(),
     new HtmlWebpackPlugin({
@@ -79,6 +71,8 @@ let config = {
         js: ['bundle.js'],
       }
     }),
+/*
+    removed in webpack 4 use config.optimization.splitChunks instead
     new webpack.optimize.CommonsChunkPlugin({
       name: "commons",
       // (the commons chunk name)
@@ -92,22 +86,51 @@ let config = {
       // chunks: ["pageA", "pageB"],
       // (Only use these entries)
     }),
+*/
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|ru/),
     new FileManagerPlugin({
       onStart: {delete: [baseOutPath + 'static', baseOutPath + 'WEB-INF/templates/']},
-      onEnd: {move: [{source: baseOutPath + 'WEB-INF/templates/static', destination: baseOutPath + 'static'}],}
+      onEnd: {
+        move: [{
+          source: baseOutPath + 'WEB-INF/templates/static',
+          destination: baseOutPath + 'static'
+        }],
+      }
     })
-  ],
-  externals: externals,
-};
+  ]
+  if (env.min) {
+    plugins.push(new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }));
+  }
 
-if (env.min) {
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-  config.plugins.push(new webpack.DefinePlugin({
-    'process.env': {
-      'NODE_ENV': JSON.stringify('production')
+
+    return {
+        mode: "production",
+        optimization: {
+            minimize: env.min,
+        },
+        entry: {
+            app: ['babel-polyfill', './src/frontend/scripts/initApp.js'],
+            manager: ['babel-polyfill', './src/frontend/scripts/manager.js']
+        },
+        output: {
+            publicPath: './',
+            path: path.join(__dirname, outPath),
+            filename: fileName,
+            chunkFilename: 'static/app-[name]-[id].js',
+            library: '[name]'
+        },
+        resolve: {
+            extensions: ['.js', '.jsx'],
+            alias: {
+                react: path.resolve('node_modules/react'),
+            },
+        },
+        module: {
+            rules
+        },
+        plugins: plugins,
+        externals: externals,
     }
-  }));
-}
-
-module.exports = config;
+};
