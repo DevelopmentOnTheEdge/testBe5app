@@ -5,8 +5,8 @@
   "scripts": {
     "ws": "ws -d dist/uncompressed",
     "start": "webpack-dev-server --host 127.0.0.1 --progress --profile --colors",
-    "build": "webpack --config webpack.production.config.js --progress --stats --color --env build",
-    "build-min": "webpack --config webpack.production.config.js --progress --stats --color --env build --env min",
+    "build": "webpack --config webpack.production.config.js --progress --profile --colors --env.build",
+    "build-min": "webpack --config webpack.production.config.js --progress --profile --colors --env.build --env.min",
     "test": "jest",
     "watch": "npm test -- --watch",
     "coverage": "npm test -- --coverage",

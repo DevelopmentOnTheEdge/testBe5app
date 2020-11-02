@@ -36,7 +36,7 @@ rules.push({
 
 
 module.exports = (env) => {
-
+console.log(env)
   const baseOutPath = 'src/main/webapp/';
   const outPath = baseOutPath + 'WEB-INF/templates';
 
