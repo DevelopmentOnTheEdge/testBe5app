@@ -25,6 +25,12 @@ class TestOperation extends GOperationSupport implements Operation
             MULTIPLE_SELECTION_LIST = true
             CAN_BE_NULL = true
         }
+        params.add {
+            name = "tags"
+            TAG_LIST_ATTR = [["1","первый таг"],["2","второй таг"],["3","третий таг"]] as String[][]
+            MULTIPLE_SELECTION_LIST = true
+            CAN_BE_NULL = true
+        }
 
         params.add("beginDate", "Дата начала") {
             TYPE = java.sql.Date
