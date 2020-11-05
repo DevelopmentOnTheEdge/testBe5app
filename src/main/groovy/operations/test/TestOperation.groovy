@@ -31,6 +31,13 @@ class TestOperation extends GOperationSupport implements Operation
             MULTIPLE_SELECTION_LIST = true
             CAN_BE_NULL = true
         }
+        params.add {
+            name = "async"
+            TAG_LIST_ATTR = queries.getTagsFromSelectionView("testtable")
+            MULTIPLE_SELECTION_LIST = true
+            CAN_BE_NULL = true
+            EXTRA_ATTRS = ["inputType": "AsyncSelect"]
+        }
 
         params.add("beginDate", "Дата начала") {
             TYPE = java.sql.Date
