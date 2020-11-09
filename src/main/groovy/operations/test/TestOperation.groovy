@@ -1,9 +1,9 @@
 package operations.test
 
-import com.developmentontheedge.be5.server.operations.support.GOperationSupport
+import com.developmentontheedge.be5.databasemodel.util.DpsUtils
 import com.developmentontheedge.be5.operation.Operation
 import com.developmentontheedge.be5.operation.OperationResult
-import com.developmentontheedge.be5.databasemodel.util.DpsUtils
+import com.developmentontheedge.be5.server.operations.support.GOperationSupport
 import groovy.transform.TypeChecked
 
 @TypeChecked
@@ -36,7 +36,8 @@ class TestOperation extends GOperationSupport implements Operation
             TAG_LIST_ATTR = queries.getTagsFromSelectionView("testtable")
             MULTIPLE_SELECTION_LIST = true
             CAN_BE_NULL = true
-            EXTRA_ATTRS = ["inputType": "AsyncSelect"]
+            EXTRA_ATTRS = ["inputType": "AsyncSelect","entity": "testtable"]
+
         }
 
         params.add("beginDate", "Дата начала") {
