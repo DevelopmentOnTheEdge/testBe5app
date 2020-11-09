@@ -48,7 +48,6 @@ module.exports = (env) => {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'static/css/[name]+[hash].css',
-      esModule: false
     }),
     new OptimizeCssAssetsPlugin(),
     new HtmlWebpackPlugin({

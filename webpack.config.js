@@ -76,8 +76,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'static/[name]+[hash].css',
-            esModule: false
+            filename: 'static/[name]+[hash]style.css',
         }),
         new DashboardPlugin(),
         new HtmlWebpackPlugin({
