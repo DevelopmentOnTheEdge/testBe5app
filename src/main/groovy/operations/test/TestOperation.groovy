@@ -23,7 +23,6 @@ class TestOperation extends GOperationSupport implements Operation
             TYPE = Integer
             TAG_LIST_ATTR = [1, 2, 3] as Integer[]
             MULTIPLE_SELECTION_LIST = true
-            CAN_BE_NULL = true
         }
         params.add {
             name = "tags"
