@@ -63,6 +63,7 @@ testtable:
       - TestVerticalOperation
       - TestDownloadOperation
       - TestGroupOperation
+      - TestLongTimeOperation
       - TestNestedDpsOperation
       - TestTabedOperation
       - TestUploadOperation
@@ -282,6 +283,11 @@ testtable:
       roles: Administrator
       layout: '{"type":"modalForm","order":6}'
       file: operations.test.TestGroupOperation.groovy
+  - TestLongTimeOperation:
+      type: Groovy
+#      layout: '{"type":"modalForm"}'
+      roles: Administrator
+      file: operations.test.TestLongTimeOperation.groovy
   - TestReloadButtonOperation:
       type: Groovy
       roles: Administrator
