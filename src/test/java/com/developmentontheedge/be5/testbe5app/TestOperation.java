@@ -24,6 +24,7 @@ public class TestOperation extends TestBe5AppDBTest
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("name", "test");
         map.put("beginDate", "2017-12-20");
+        map.put("values", "1");
         OperationResult second = executeOperation("testtable", "Test 1D", "TestOperation", "", map).getSecond();
 
         Assert.assertEquals(OperationStatus.FINISHED, second.getStatus());

@@ -18,25 +18,27 @@ class TestOperation extends GOperationSupport implements Operation
             RELOAD_ON_CHANGE = true
         }
 
+
         params.add {
             name = "values"
             TYPE = Integer
             TAG_LIST_ATTR = [1, 2, 3] as Integer[]
             MULTIPLE_SELECTION_LIST = true
         }
+
         params.add {
             name = "tags"
             TAG_LIST_ATTR = [["1","первый таг"],["2","второй таг"],["3","третий таг"]] as String[][]
             MULTIPLE_SELECTION_LIST = true
             CAN_BE_NULL = true
         }
+
         params.add {
             name = "async"
             TAG_LIST_ATTR = queries.getTagsFromSelectionView("testtable")
             MULTIPLE_SELECTION_LIST = true
             CAN_BE_NULL = true
             EXTRA_ATTRS = ["inputType": "AsyncSelect","entity": "testtable"]
-
         }
 
         params.add("beginDate", "Дата начала") {
