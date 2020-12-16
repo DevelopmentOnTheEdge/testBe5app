@@ -285,7 +285,7 @@ testtable:
       file: operations.test.TestGroupOperation.groovy
   - TestLongTimeOperation:
       type: Groovy
-#      layout: '{"type":"modalForm"}'
+      layout: '{"type":"modalForm","longTimeOperation":"yes"}'
       roles: Administrator
       file: operations.test.TestLongTimeOperation.groovy
   - TestReloadButtonOperation:
