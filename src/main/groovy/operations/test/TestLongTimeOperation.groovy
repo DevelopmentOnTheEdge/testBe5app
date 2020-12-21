@@ -18,14 +18,15 @@ class TestLongTimeOperation extends GOperationSupport implements Operation
             RELOAD_ON_CHANGE = true
             CAN_BE_NULL = true
         }
-        return DpsUtils.setValues(params, presetValues)
+//        return DpsUtils.setValues(params, presetValues)
+        return null
     }
 
     @Override
     void invoke(Object parameters) throws Exception
     {
-        Thread.sleep(5000);
-        validator.setError(params.getProperty("name"), "test error")
-//        setResult(OperationResult.finished("test message"))
+        Thread.sleep(2000);
+//        validator.setError(params.getProperty("name"), "test error")
+        setResult(OperationResult.finished("test message"))
     }
 }
