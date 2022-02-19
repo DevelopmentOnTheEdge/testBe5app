@@ -1,8 +1,8 @@
 package com.developmentontheedge.be5.testbe5app.services;
 
 import com.developmentontheedge.be5.database.DbService;
-import com.developmentontheedge.be5.query.model.beans.QRec;
-import com.developmentontheedge.be5.query.sql.QRecParser;
+import com.developmentontheedge.be5.database.QRec;
+import com.developmentontheedge.be5.database.adapters.QRecParser;
 
 import javax.inject.Inject;
 import java.util.List;

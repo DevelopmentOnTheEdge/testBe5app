@@ -1,6 +1,6 @@
 package queries.test
 
-import com.developmentontheedge.be5.query.model.beans.QRec
+import com.developmentontheedge.be5.database.QRec
 import com.developmentontheedge.be5.server.queries.support.QueryExecutorSupport
 
 class QuickFilter extends QueryExecutorSupport
