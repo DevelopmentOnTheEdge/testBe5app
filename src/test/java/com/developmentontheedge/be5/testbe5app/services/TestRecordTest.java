@@ -1,6 +1,6 @@
 package com.developmentontheedge.be5.testbe5app.services;
 
-import com.developmentontheedge.be5.query.model.beans.QRec;
+import com.developmentontheedge.be5.database.QRec;
 import com.developmentontheedge.be5.testbe5app.TestBe5AppDBTest;
 import org.junit.Assert;
 import org.junit.Test;
