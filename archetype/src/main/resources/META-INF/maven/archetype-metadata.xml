@@ -44,8 +44,20 @@ under the License.
         <include>*.yaml</include>
       </includes>
     </fileSet>
+
+    <fileSet filtered="true" packaged="false">
+      <directory>src/frontend</directory>
+      <excludes>
+        <exclude>template.html</exclude>
+        <exclude>template-dev.html</exclude>
+      </excludes>
+    </fileSet>
     <fileSet filtered="false" packaged="false">
       <directory>src/frontend</directory>
+      <includes>
+        <include>template.html</include>
+        <include>template-dev.html</include>
+      </includes>
     </fileSet>
 
     <fileSet filtered="true" packaged="true">

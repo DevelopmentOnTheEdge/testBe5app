@@ -51,7 +51,7 @@ testtable:
           ORDER BY value
   - Test 1D:
       type: 1D
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       layout: '{"topForm":"TopFilter"}'
       defaultView: true
       operations:
@@ -93,7 +93,7 @@ testtable:
   - Test 1D unknown:
       type: 1D_unknown
       invisible: true
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       operations:
       - CustomFilter
       code: |2-
@@ -108,7 +108,7 @@ testtable:
             </if>
   - Test quick filters:
       type: 1D_unknown
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       quickFilters:
         By name query:
           queryParam: name
@@ -125,7 +125,7 @@ testtable:
       code: <@_copyQuery "Test 1D"/>
   - Test JSON format:
       type: 1D_unknown
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       layout: '{"_displayType_":"json"}'
       code: |2-
             SELECT
@@ -139,7 +139,7 @@ testtable:
             </if>
   - Test 1D quickvisible as select:
       type: 1D
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       layout: '{"topForm":"TopFilter","quickType":"select"}'
       defaultView: true
       operations:
@@ -174,11 +174,16 @@ testtable:
               testtable t
   - Test Chart:
       type: 1D_unknown
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       layout: '{"defaultPageLimit": 10000,"type":"chart", "xData":"column1", "yData":"column2,column4"}'
       code: |2-
-            WITH
-              data AS (
+            SELECT
+              t.y AS "column1",
+              t.y AS "column2",
+              '<chart mode="lines+markers" name="Title from column attr" line="{width:1;color:RGB(100,200,200)}" />' AS  ";column2",
+              t.y * 2 AS "column3",
+              CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y * 2 END AS "column4"
+            FROM (
                   SELECT 1 AS y
                   UNION ALL
                   SELECT 2 AS y
@@ -218,18 +223,11 @@ testtable:
                   SELECT 18 AS y
                   UNION ALL
                   SELECT 19 AS y
-                  )
-            SELECT
-              t.y AS "column1",
-              t.y AS "column2",
-              '<chart mode="lines+markers" name="Title from column attr" line="{width:1;color:RGB(100,200,200)}" />' AS  ";column2",
-              t.y * 2 AS "column3",
-              CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y * 2 END AS "column4"
-            FROM data t
+                  ) t
   - subQuery:
       type: 1D_unknown
       invisible: true
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       code: |2-
           SELECT
             t.name,
@@ -243,7 +241,7 @@ testtable:
   - subQuery3:
       type: 1D_unknown
       invisible: true
-      roles: [Administrator, Guest]
+      roles: [Administrator]
       code: |2-
           SELECT
             t.name,
