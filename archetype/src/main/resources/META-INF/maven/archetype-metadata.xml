@@ -32,6 +32,7 @@ under the License.
         <include>.gitignore</include>
         <include>.local-web-server.json</include>
         <include>webpack.common.js</include>
+        <include>webpack.config.js</include>
         <include>webpack.production.config.js</include>
         <include>package.json</include>
         <include>README.md</include>
