@@ -2,7 +2,7 @@ package ${package}.${artifactId};
 
 import com.developmentontheedge.be5.jetty.EmbeddedJetty;
 
-public class Be5TestAppMain
+public class AppMain
 {
     public static void main(String... args)
     {

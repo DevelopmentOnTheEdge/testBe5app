@@ -14,15 +14,15 @@ import com.google.inject.Injector;
 import static com.developmentontheedge.be5.modules.monitoring.Metrics.METRIC_REGISTRY;
 
 
-public class Be5TestAppGuiceServletConfig extends Be5ServletListener
+public class AppGuiceServletConfig extends Be5ServletListener
 {
     @Override
     protected Injector getInjector()
     {
-        return Guice.createInjector(getStage(), new Be5TestAppModule());
+        return Guice.createInjector(getStage(), new AppModule());
     }
 
-    private static class Be5TestAppModule extends AbstractModule
+    private static class AppModule extends AbstractModule
     {
         @Override
         protected void configure()

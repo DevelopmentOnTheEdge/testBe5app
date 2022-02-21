@@ -25,7 +25,7 @@
  </listener>
 
  <listener>
-  <listener-class>com.developmentontheedge.be5.${artifactId}.Be5TestAppGuiceServletConfig</listener-class>
+  <listener-class>com.developmentontheedge.be5.${artifactId}.AppGuiceServletConfig</listener-class>
  </listener>
  <listener>
   <listener-class>com.developmentontheedge.be5.server.authentication.AuthenticationPropagationListener</listener-class>

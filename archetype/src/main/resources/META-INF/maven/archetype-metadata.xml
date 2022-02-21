@@ -47,12 +47,20 @@ under the License.
     <fileSet filtered="false" packaged="false">
       <directory>src/frontend</directory>
     </fileSet>
+
     <fileSet filtered="true" packaged="true">
       <directory>src/main/java</directory>
     </fileSet>
     <fileSet filtered="false" packaged="false">
       <directory>src/main/groovy</directory>
     </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/webapp</directory>
+    </fileSet>
+    <fileSet filtered="true" packaged="false">
+      <directory>src/main/resources</directory>
+    </fileSet>
+
     <fileSet filtered="false" packaged="false">
       <directory>src/meta</directory>
     </fileSet>
