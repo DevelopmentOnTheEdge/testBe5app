@@ -10,7 +10,9 @@ ${artifactId}:
   l10n: [en,ru]
   modules:
   - core:
-      entities: []
+      entities:
+      - users
+      - _logout_
   application:
   - _welcome_
   - testtable
