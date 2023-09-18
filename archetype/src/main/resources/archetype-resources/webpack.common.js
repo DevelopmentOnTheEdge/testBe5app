@@ -53,7 +53,7 @@ module.exports = {
       test: /\.(jpg|jpeg|gif|png|ico)$/,
       exclude: /node_modules/,
       loader:'url-loader',
-      options: {limit:"6024",name:"images/[name].[ext]"}
+      options: {limit:"1",name:"static/images/[name].[ext]"}
     }
   ],
   externals: {
