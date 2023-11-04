@@ -7,7 +7,7 @@
     <file>${LOG_DIR}/${APP_NAME}.log</file>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <Pattern>
-        %d{yyyy-MM-dd HH:mm:ss.sss} [%thread] %level  %logger:%L - %msg%n
+        %d{yyyy-MM-dd HH:mm:ss.sss} [%thread] %level %logger{20}:%L - %msg%n
       </Pattern>
     </encoder>
 
