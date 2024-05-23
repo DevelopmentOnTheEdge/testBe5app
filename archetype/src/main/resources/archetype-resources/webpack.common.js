@@ -57,11 +57,9 @@ module.exports = {
     }
   ],
   externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
     underscore: '_',
     jquery: 'jQuery',
     datatables: "DataTables",
-    moment: "moment",
+    moment: "moment"
   }
 };
