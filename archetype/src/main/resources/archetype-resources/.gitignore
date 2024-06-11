@@ -1,6 +1,7 @@
 src/profile.local
 src/lib/
 dev.yaml
+package-lock.json
 
 /.project
 /target
