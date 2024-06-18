@@ -172,13 +172,35 @@ testtable:
               t.value AS "Value 11;<quick visible='false'/>"
             FROM
               testtable t
-  - Test Chart:
+  - Test Scatter Bar Chart:
       type: 1D_unknown
-      roles: [Administrator, Guest]
-      layout: '{"defaultPageLimit": 10000,"type":"chart", "xData":"column1", "yData":"column2,column4"}'
+      roles: [Administrator]
+      layout: '{
+                  "defaultPageLimit": 10000,
+                  "type": "chart",
+                  "chartLayout": {
+                      "xaxis": {
+                          "title": "X axis"
+                      },
+                      "yaxis": {
+                          "title": "Y axis"
+                      }
+                  }
+              }'
       code: |2-
-            WITH
-              data AS (
+            SELECT
+            t.y AS "columnX1",
+            '<chart type="scatter" mode="lines+markers" y="columnY1" name="Teal Trace 1" line="{width:1;color:RGB(100,200,200)}" />' 
+                AS ";columnX1",
+            t.y * 2 AS "columnY1",
+            t.y AS "columnX2",
+            '<chart type="scatter" mode="lines" y="columnY2" name="Orange Trace 2" line="{width:1,color:RGB(253,118,0)}" />' 
+                AS ";columnX2",
+            CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y + 5 END AS "columnY2",
+            t.y AS "columnX3",
+            '<chart type="bar" y="columnX1" name="Bar Trace" marker="{color:RGB(158,202,225);opacity:0.8}" />' 
+                AS ";columnX3"
+            FROM (
                   SELECT 1 AS y
                   UNION ALL
                   SELECT 2 AS y
@@ -218,14 +240,80 @@ testtable:
                   SELECT 18 AS y
                   UNION ALL
                   SELECT 19 AS y
-                  )
+                  ) t
+  - Test Histogram Chart:
+      type: 1D_unknown
+      roles: [Administrator]
+      layout: '{
+                  "defaultPageLimit": 10000,
+                  "type": "chart",
+                  "chartLayout": {
+                      "title": "Just a histogram"
+              }'
+      code: |2-
             SELECT
-              t.y AS "column1",
-              t.y AS "column2",
-              '<chart mode="lines+markers" name="Title from column attr" line="{width:1;color:RGB(100,200,200)}" />' AS  ";column2",
-              t.y * 2 AS "column3",
-              CASE WHEN t.y < 10 THEN  t.y * 3 ELSE t.y * 2 END AS "column4"
-            FROM data t
+            t.y AS "columnX1",
+            '<chart type="histogram" name="Teal Trace 1" rotate="true"/>' 
+                AS ";columnX1",
+            t.y * 2 AS "columnY1"
+            FROM (
+                  SELECT 1 AS y
+                  UNION ALL
+                  SELECT 1 AS y
+                  UNION ALL
+                  SELECT 1 AS y
+                  UNION ALL
+                  SELECT 2 AS y
+                  UNION ALL
+                  SELECT 2 AS y
+                  UNION ALL
+                  SELECT 3.4 AS y
+                  UNION ALL
+                  SELECT 3 AS y
+                  UNION ALL
+                  SELECT 3.7 AS y
+                  UNION ALL
+                  SELECT 4 AS y
+                  UNION ALL
+                  SELECT 4.2 AS y
+                  UNION ALL
+                  SELECT 4.3 AS y
+                  UNION ALL
+                  SELECT 5 AS y
+                  UNION ALL
+                  SELECT 5.3 AS y
+                  UNION ALL
+                  SELECT 5.6 AS y
+                  UNION ALL
+                  SELECT 5.7 AS y
+                  UNION ALL
+                  SELECT 5.8 AS y
+                  UNION ALL
+                  SELECT 5.7 AS y
+                  UNION ALL
+                  SELECT 5.9 AS y
+                  UNION ALL
+                  SELECT 6.1 AS y
+                  UNION ALL
+                  SELECT 6.1 AS y
+                  ) t
+  - Test Pie Chart:
+      type: 1D_unknown
+      roles: [Administrator]
+      layout: '{"defaultPageLimit": 10000,"type":"chart"}'
+      code: |2-
+            SELECT
+              t.val AS "columnX1",
+              '<chart type="pie" mode="percent" labels="columnY1" name="Trace 1" />' 
+                  AS ";columnX1",
+              t.label AS "columnY1"
+            FROM (
+                  SELECT 52 AS val, 'Non-Resident' AS label
+                  UNION ALL
+                  SELECT 38 AS val, 'Resident' AS label
+                  UNION ALL
+                  SELECT 110 AS val, 'Utility' AS label
+                  ) t
   - subQuery:
       type: 1D_unknown
       invisible: true
