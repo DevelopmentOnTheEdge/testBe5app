@@ -1,7 +1,6 @@
 src/profile.local
-src/lib/
 dev.yaml
-package-lock.json
+package-lock.json 
 
 /.project
 /target
@@ -10,7 +9,9 @@ package-lock.json
 
 ### frontend build dir ###
 /src/main/webapp/static
-/src/main/webapp/WEB-INF/templates/*
+/src/main/webapp/WEB-INF/templates/manager/index.html
+/src/main/webapp/WEB-INF/templates/index.html
+/src/ftl
 
 ### IntelliJ IDEA ###
 .idea
