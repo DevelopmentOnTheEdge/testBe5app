@@ -6,11 +6,12 @@
 
   <groupId>com.developmentontheedge.be5</groupId>
   <artifactId>be5-app-template</artifactId>
+  <!--version>1.0.0</version-->
   <version>1.0.0-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>Archetype - be5-app</name>
-
+  <description>Archetype for creating BeanExplorer v5 (aka be5) applications</description>
   <url>https://github.com/DevelopmentOnTheEdge/testBe5app</url>
 
   <properties>
@@ -18,6 +19,20 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <organization>Development On The Edge</organization>
+            <organizationUrl>https://github.com/DevelopmentOnTheEdge</organizationUrl>
+        </developer>
+    </developers>
 
   <scm>
       <connection>scm:git:git://github.com/DevelopmentOnTheEdge/testBe5app.git</connection>
@@ -41,17 +56,36 @@
     <url>https://nexus.dote.ru/nexus/content/repositories/snapshots/</url>
    </snapshotRepository>
 
-   <!--snapshotRepository>
-     <id>ossrh</id>
-     <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-   </snapshotRepository>
-   <repository>
-     <id>ossrh</id>
-     <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-   </repository-->
   </distributionManagement>
 
   <build>
+    <plugins>
+        <plugin>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.5.0</version>
+          <extensions>true</extensions>
+          <configuration>
+            <publishingServerId>central</publishingServerId>
+          </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+                <execution>
+                    <id>sign-artifacts</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>sign</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+
     <extensions>
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
@@ -59,5 +93,6 @@
         <version>3.0.1</version>
       </extension>
     </extensions>
+
   </build>
 </project>
