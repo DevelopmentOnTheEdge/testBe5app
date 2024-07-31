@@ -114,7 +114,7 @@ module.exports = (env) => {
             manager: ['babel-polyfill', './src/frontend/scripts/manager.js']
         },
         output: {
-            publicPath: './',
+            publicPath: '/',
             path: path.join(__dirname, outPath),
             filename: fileName,
             chunkFilename: 'static/app-[name]-[id].js',
