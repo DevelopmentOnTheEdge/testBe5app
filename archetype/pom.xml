@@ -6,7 +6,7 @@
 
   <groupId>com.developmentontheedge.be5</groupId>
   <artifactId>be5-app-template</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <packaging>maven-archetype</packaging>
 
   <name>Archetype - be5-app</name>
